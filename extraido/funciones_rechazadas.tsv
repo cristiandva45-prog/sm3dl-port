@@ -1,0 +1,14 @@
+001187E4	8	data	no termina
+00130010	48	data	no decodifica
+00130040	16	literal	sospechosa cdpvs
+00139578	12	derivada	no termina
+00154A84	36	derivada	no termina
+001B87E0	64	data	sospechosa cdpvs
+002605DC	28	literal	no decodifica
+0027C790	4	rodata	no termina
+00288738	36	salto	no termina
+0028875C	4	derivada	no termina
+002D6B4C	16	literal	no termina
+002D6B5C	28	literal	no decodifica
+002F0000	4	rodata	no termina
+002F0004	12	data	no termina

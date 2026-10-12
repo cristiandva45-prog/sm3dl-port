@@ -1,0 +1,102 @@
+R = [
+("typedef struct { uint32_t dir, w, h, fmt, niveles, hash, gen; RbTex *tex; uint32_t uso; } TexCache;\n",
+ "/* P1: tam = bytes de todos los mips en memoria; vista = contenido validado (hash) en el cuadro `cuadro` y sin aviso de\n"
+ "   escritura desde entonces; hd = texhd_activo() al validarla */\n"
+ "typedef struct { uint32_t dir, w, h, fmt, niveles, hash, gen; RbTex *tex; uint32_t uso; uint32_t tam, cuadro; int vista, hd; } TexCache;\n"),
+
+("void raster_tex_hd_recargar(void) { g_tex_gen++; }\n",
+ "void raster_tex_hd_recargar(void) { g_tex_gen++; }\n"
+ "\n"
+ "/* P1 (10 oct): ATAJO de textura_para. Medido por H1 en la partida del duenio: 8,48 M dibujos en 59 s, tramo \"texturas\"\n"
+ "   17,8 s porque cada dibujo copiaba y hasheaba (FNV) la textura ENTERA con todos sus mips para saber si cambio. Ahora\n"
+ "   una entrada ya validada se devuelve sin leer memoria mientras (1) no llegue un aviso de escritura que la solape y\n"
+ "   (2) no cambie el cuadro. (1) = gsp_tras_escribir (gsp.c): TODA escritura de la GPU emulada (fill, transfer,\n"
+ "   texcopy, DMA, bajada de un RT por antes_de_leer -> render a textura, copias de la re-ejecucion) y las escrituras de\n"
+ "   CPU que el juego avisa como en el 3DS real (Flush/InvalidateDataCache, GX CacheFlush). (2) = gsp_cuadro_tex, +1 en\n"
+ "   la transfer de abajo y NO en las re-ejecuciones del 144: red para las escrituras de CPU SIN aviso (van directo a\n"
+ "   rt_pagina; nadie las ve): una vez por cuadro real se re-hashea como antes; en los intermedios nunca (mismo cuadro).\n"
+ "   Limite: una escritura de CPU sin flush en MEDIO de un cuadro sobre una textura ya usada en ese cuadro no se ve hasta\n"
+ "   el siguiente (en el 3DS real tampoco seria coherente sin flush). Medirlo: SM3DL_P1_VERIFICAR=1 hashea igual en cada\n"
+ "   atajo y cuenta \"errores\" (log [p1-tex]). SM3DL_P1_ATAJO=0 = camino de antes. SM3DL_P1_SABOTAJE=1 = se ignoran avisos\n"
+ "   y frontera (debe verse fallar: contenido nuevo en la misma direccion no se re-sube). */\n"
+ "extern void (*gsp_tras_escribir)(uint32_t fisica, uint32_t tam);\n"
+ "extern uint32_t gsp_cuadro_tex;\n"
+ "static int g_p1_modo = -1, g_p1_sab;   /* modo: 0 sin atajo, 1 atajo, 2 atajo + verificacion */\n"
+ "static uint64_t g_p1_llamadas, g_p1_atajos, g_p1_validas, g_p1_avisos, g_p1_errores;\n"
+ "static uint8_t g_tex_pista[1024];      /* direccion -> indice en g_tex (pista; siempre se comprueba la entrada) */\n"
+ "static void tex_tras_escribir(uint32_t f, uint32_t tam)\n"
+ "{\n"
+ "    if (g_p1_sab) return;\n"
+ "    uint32_t fin = f + tam < f ? 0xFFFFFFFFu : f + tam;\n"
+ "    for (int k = 0; k < 256; k++) {\n"
+ "        TexCache *c = &g_tex[k];\n"
+ "        if (c->vista && solapa(f, fin, c->dir, c->dir + c->tam)) { c->vista = 0; g_p1_avisos++; }\n"
+ "    }\n"
+ "}\n"
+ "static void p1_iniciar(void)\n"
+ "{\n"
+ "    const char *s = getenv(\"SM3DL_P1_ATAJO\");\n"
+ "    g_p1_modo = s ? (atoi(s) ? 1 : 0) : 1;\n"
+ "    s = getenv(\"SM3DL_P1_VERIFICAR\");\n"
+ "    if (g_p1_modo && s && atoi(s)) g_p1_modo = 2;\n"
+ "    s = getenv(\"SM3DL_P1_SABOTAJE\");\n"
+ "    g_p1_sab = s ? atoi(s) : 0;\n"
+ "    logr(\"[p1-tex] atajo de texturas: modo %d%s\", g_p1_modo, g_p1_sab ? \" (SABOTAJE: sin avisos ni frontera)\" : \"\");\n"
+ "}\n"),
+
+("    antes_de_leer(x->direccion, (uint32_t)tam);   /* puede ser un render target (render a textura) */\n"
+ "    g_desde_textura = 0;\n"
+ "    uint8_t *m = malloc(tam);\n"
+ "    if (!m || gsp_leer_fisica(x->direccion, m, (uint32_t)tam) != 0) { free(m); return 0; }\n"
+ "    uint32_t h = fnv((const uint32_t *)m, tam / 4);\n"
+ "    TexCache *libre = &g_tex[0];\n"
+ "    const int hd_on = texhd_activo();\n"
+ "    h ^= hd_on ? 0x9E3779B9u : 0u;   /* T2: la misma textura con HD encendido/apagado es otro contenido */\n"
+ "    g_reloj++;\n",
+ "    antes_de_leer(x->direccion, (uint32_t)tam);   /* puede ser un render target (render a textura): su bajada avisa (P1) */\n"
+ "    g_desde_textura = 0;\n"
+ "    if (g_p1_modo < 0) p1_iniciar();\n"
+ "    const int hd_on = texhd_activo();\n"
+ "    g_reloj++;\n"
+ "    if (!(++g_p1_llamadas & 0x1FFFFF))\n"
+ "        logr(\"[p1-tex] %llu usos: %llu atajos, %llu re-validadas sin cambio, %u subidas, %llu avisos, %llu ERRORES (cambio sin aviso)\",\n"
+ "             (unsigned long long)g_p1_llamadas, (unsigned long long)g_p1_atajos, (unsigned long long)g_p1_validas, g_tex_subidas,\n"
+ "             (unsigned long long)g_p1_avisos, (unsigned long long)g_p1_errores);\n"
+ "    const uint32_t cuadro = g_p1_sab ? 0u : gsp_cuadro_tex;\n"
+ "    const unsigned pista = (x->direccion * 2654435761u) >> 22;\n"
+ "    TexCache *ya = &g_tex[g_tex_pista[pista]];\n"
+ "    const int ya_vale = g_p1_modo && ya->tex && ya->vista && ya->dir == x->direccion && ya->w == x->ancho && ya->h == x->alto &&\n"
+ "                        ya->fmt == x->formato && ya->niveles == (uint32_t)niveles && ya->cuadro == cuadro &&\n"
+ "                        ya->gen == g_tex_gen && ya->hd == hd_on;\n"
+ "    if (ya_vale && g_p1_modo == 1) { ya->uso = g_reloj; g_p1_atajos++; return ya->tex; }\n"
+ "    uint8_t *m = malloc(tam);\n"
+ "    if (!m || gsp_leer_fisica(x->direccion, m, (uint32_t)tam) != 0) { free(m); return 0; }\n"
+ "    uint32_t h = fnv((const uint32_t *)m, tam / 4);\n"
+ "    TexCache *libre = &g_tex[0];\n"
+ "    h ^= hd_on ? 0x9E3779B9u : 0u;   /* T2: la misma textura con HD encendido/apagado es otro contenido */\n"
+ "    if (ya_vale) {   /* modo 2: el atajo se habria tomado; se comprueba contra el hash de verdad */\n"
+ "        if (ya->hash == h) { ya->uso = g_reloj; g_p1_atajos++; free(m); return ya->tex; }\n"
+ "        if (g_p1_errores++ < 8)\n"
+ "            logr(\"[p1-tex] ERROR: textura 0x%08X %ux%u fmt %u cambio sin aviso en el cuadro %u\", x->direccion, x->ancho, x->alto,\n"
+ "                 x->formato, cuadro);\n"
+ "    }\n"),
+
+("            if (c->hash != h || c->gen != g_tex_gen) { libre = c; break; }       /* misma textura, contenido nuevo: reusar la entrada */\n"
+ "            c->uso = g_reloj;\n"
+ "            free(m);\n"
+ "            return c->tex;\n",
+ "            if (c->hash != h || c->gen != g_tex_gen) { libre = c; break; }       /* misma textura, contenido nuevo: reusar la entrada */\n"
+ "            c->uso = g_reloj;\n"
+ "            c->vista = 1; c->cuadro = cuadro; c->hd = hd_on; g_tex_pista[pista] = (uint8_t)k; g_p1_validas++;   /* P1 */\n"
+ "            free(m);\n"
+ "            return c->tex;\n"),
+
+("    libre->hash = h; libre->gen = g_tex_gen; libre->uso = g_reloj;\n",
+ "    libre->hash = h; libre->gen = g_tex_gen; libre->uso = g_reloj;\n"
+ "    libre->tam = (uint32_t)tam; libre->vista = niveles > 0; libre->cuadro = cuadro; libre->hd = hd_on;   /* P1 */\n"
+ "    g_tex_pista[pista] = (uint8_t)(libre - g_tex);\n"),
+
+("    gsp_antes_de_leer = antes_de_leer;\n",
+ "    gsp_antes_de_leer = antes_de_leer;\n"
+ "    gsp_tras_escribir = tex_tras_escribir;   /* P1: avisos de escritura -> cache de texturas */\n"),
+]

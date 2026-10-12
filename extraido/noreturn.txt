@@ -1,0 +1,9 @@
+00100000	cola a noreturn 0x0029360C
+001029E4	sin return
+001297F4	cola a noreturn 0x0029316C
+001CF328	sin return
+00255E70	cola a noreturn 0x001297F4
+0028E9D8	cola a noreturn 0x0028EC88
+0028EC88	svc Break
+0029316C	svc ExitProcess
+0029360C	svc ExitProcess

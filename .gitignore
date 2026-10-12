@@ -1,0 +1,71 @@
+# Lista BLANCA: todo queda fuera salvo lo que se permite abajo.
+# Nada que salga de la ROM se sube (romfs, ejecutable, texturas, modelos,
+# textos, C generado, binarios compilados, proyecto de Ghidra, volcados).
+# Cada quien regenera eso con su propio .3ds y los scripts de tools/.
+*
+!*/
+
+# --- Raíz ---
+!/.gitignore
+!/README.md
+!/ESTADO.md
+!/JUGAR*.bat
+!/texturas_hd_reglas.tsv
+
+# --- Herramientas propias ---
+!/tools/*.py
+!/tools/*.sh
+
+# --- Decompilación a mano (código propio, sin build) ---
+!/decomp/*.py
+!/decomp/README.md
+!/decomp/include/*.h
+!/decomp/src/*.c
+
+# --- Recompilador + runtime (código propio) ---
+!/recomp/*.py
+!/recomp/README.md
+!/recomp/ganchos.txt
+!/recomp/arranque/*.py
+!/recomp/arranque/*.md
+!/recomp/arranque/main.c
+!/recomp/arranque/sonda.c
+!/recomp/runtime/**/*.c
+!/recomp/runtime/**/*.h
+!/recomp/render/**/*.c
+!/recomp/render/**/*.h
+!/recomp/render/**/*.inc
+!/recomp/gpu/**/*.c
+!/recomp/gpu/**/*.h
+!/recomp/gpu/**/*.inc
+!/recomp/gpu/**/*.py
+!/recomp/audio/**/*.c
+!/recomp/audio/**/*.h
+!/recomp/hid/**/*.c
+!/recomp/hid/**/*.h
+!/recomp/sistema/**/*.c
+!/recomp/sistema/**/*.h
+!/recomp/sistema/**/*.py
+
+# --- Notas de investigación ---
+!/reportes/*.md
+!/agentes_*/**/*.md
+!/agentes_*/**/*.py
+
+# --- Mapa de símbolos y tablas de análisis (nombres y direcciones, sin código ni arte) ---
+!/extraido/simbolos.txt
+!/extraido/funciones.tsv
+!/extraido/funciones_extra.tsv
+!/extraido/funciones_rechazadas.tsv
+!/extraido/tabla_actores.tsv
+!/extraido/vtables_actores.tsv
+!/extraido/clases_prioridad.tsv
+!/extraido/noreturn.txt
+
+# --- Nunca, aunque coincida arriba ---
+__pycache__/
+*.antes*
+*.3ds
+*.cia
+*.cxi
+terceros/

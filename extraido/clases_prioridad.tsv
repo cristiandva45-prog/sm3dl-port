@@ -1,0 +1,255 @@
+clase	apariciones	objetos_distintos	create_en_codigo	ejemplos
+Coin	2314	2	0x00397ebc	Coin, CoinSensorSmall
+CameraArea	2281	1	0x00398dcc	CameraArea
+FixMapParts	1310	367	0x003963fc	AquariumSwimGoal, AquariumSwimMiddleView, AquariumSwimMiddleViewSea, AquariumSwimMiddleViewSp, AquariumSwimStepB, AquariumSwimStepBFrontSeaSurface
+LightArea	1024	1	0x00398f3c	LightArea
+ViewCtrlArea	921	1	0x00398f3c	ViewCtrlArea
+DeathArea	834	1	0x00398f3c	DeathArea
+BlockBrick	702	2	0x00395da4	BlockBrick, BlockBrickWithCoin
+FallMapParts	683	3	0x00396744	ChikuwaBlock2x4, FallFloor2x4, FallFloor2x6M
+SwitchKeepOnArea	623	1	0x00398e94	SwitchKeepOnArea
+Grass	526	18	0x00397ffc	FlowerBlue, FlowerBlueCoin, FlowerBlueKinokoOneUp, FlowerHibiscus, FlowerHibiscusCoin, FlowerHibiscusCoinx3
+Mario	487	1		Mario
+SwitchOnArea	473	1	0x00398e94	SwitchOnArea
+BlockRailStraight	342	6	0x003976d4	BlockRailSlope8x4M, BlockRailStraight4M, BlockRailStraight8M, KoopaLavaTruckRailSlope8x4M, KoopaLavaTruckRailStraight4M, KoopaLavaTruckRailStraight8M
+TransparentWall	324	2	0x003973fc	TransparentWall, TransparentWallMoveLimit
+DemoActor	313	1		DemoActor
+CoinCollect	308	2	0x00396354	CoinCollect, CoinCollectMystery
+BlockQuestion	306	13	0x003969ac	BlockQuestionBoomerangFlower, BlockQuestionCoin, BlockQuestionCoin10, BlockQuestionCoinInfinity, BlockQuestionCoinRandom10, BlockQuestionFireFlower
+BlockBrickItem	266	9	0x00396d8c	BlockBrickBoomerangFlower, BlockBrickCoin, BlockBrickCoin10, BlockBrickCoinRandom10, BlockBrickFireFlower, BlockBrickOneUp
+EffectObj	245	9	0x00398a6c	EffectObj2DCloud, EffectObj2DCloudBig, EffectObjButterfly, EffectObjCandlestandFireBig, EffectObjFireworks, EffectObjFishRed
+CourseSelectObj	231	6	0x0039708c	CourseCactus, CourseCloud, CourseFlower, CourseGrass, CourseKinoko, CourseShrub
+CandlestandFire	203	1	0x00397054	CandlestandFire
+KoopaCollapseStep	202	5	0x003977dc	KoopaCollapseStepA, KoopaCollapseStepB, KoopaCollapseStepNoGuardA, KoopaCollapseStepNoGuardB, KoopaLastBridge
+BlockTransparent	197	6	0x00397434	BlockTransparentCoin, BlockTransparentFireFlower, BlockTransparentOneUp, BlockTransparentPopCoin5, BlockTransparentSuperLeaf, BlockTransparentSuperStar
+TimerClock	176	2	0x003961cc	TimerClock10, TimerClock100
+BlockHelp	176	2	0x003989fc	BlockAssistAssistItem, BlockHelpPatapataWing
+KeyMoveMapParts	173	28	0x00397284	BattleShipRollerBossRoomMoveStep, DotCoinStairA, DungeonTrapDoor, KoopaFirstGoalGate, KoopaLastGateBlock, KoopaLavaTruckEntrance
+PatanBoard	164	1	0x00396044	PatanBoard
+RotateMapParts	162	21	0x00396f04	BattleShipRollerCylinderLarge, BattleShipRollerCylinderMiddle, BattleShipRollerHexaMiddle, BattleShipRollerHexaSmall, InsideClockGearA, InsideClockGearB
+NeedleBlock	158	2	0x003965bc	NeedleBlock, NeedleBlockJoint
+BlockEmpty	147	3	0x00395ddc	BlockEmpty, BlockEmpty2x2, BlockEmptyTrickArt
+AreaObj	135	3		Guide3DArea, PlayerWidenStickXSnapArea, PresentMessageArea
+AudioEffectChangeArea	133	1	0x00398f3c	AudioEffectChangeArea
+AppearStep	130	7	0x00395d34	FlashTeresaAppearFloorA, FlashTeresaAppearFloorB, FlashTeresaAppearFloorC, FlashTeresaAppearFloorD, FlashTeresaAppearFloorE, FlashTeresaAppearFloorG
+CollapseBreakMapParts	128	4	0x00397c64	KoopaLastCollapseStepA, KoopaLastCollapseStepA4x8M, KoopaLastCollapseStepB, KoopaLastCollapseStepB4x8M
+NeedleTrap	123	1	0x00395f9c	NeedleTrap
+RailMoveMapParts	123	7	0x0039762c	FortressGororiEscalator, FortressSpikeBeltConveyer, LiftRailMove, LiftRailMove3x3, SweetsScrollLiftA, SweetsScrollLiftC
+Rope	120	1	0x00397f54	Rope
+Sky	117	21	0x00397e5c	SkyCave, SkyCloudSea, SkyCloudSeaGreen, SkyCloudSeaPink, SkyEvening, SkyForest
+PataKuribo	113	1	0x0039600c	PataKuribo
+MarinePlant	112	2	0x00396584	MarinePlant, MarinePlantGreen
+JumpFlipBoard	111	4	0x00396aec	JumpFlipBoard2x4, JumpFlipBoard3x18, JumpFlipBoard3x6, JumpFlipBoard4x4
+FogArea	110	1	0x00398f3c	FogArea
+WarpCube	108	3	0x0039891c	WarpCube, WarpCubeOnce, WarpCubeOutOnly
+GrassMike	107	2	0x00398adc	GrassMike, GrassMikeCoin
+PeraObj	105	3	0x003986b4	PeraDokan, PeraKinokoOneUp, PeraKuribo
+KinokoOneUp	103	3	0x0039646c	KinokoOneUp, KinokoOneUpMysteryBoxNormal, KinokoOneUpMysteryBoxPresent
+Candlestand	99	2	0x0039631c	Candlestand, Torch
+Burner	95	1	0x003981f4	Burner
+Trampoline	92	4	0x00396204	Trampoline2x2M, Trampoline2x4M, Trampoline4x4M, Trampoline4x8M
+Bird	91	3	0x00397e84	Bird, BirdOneUp, BirdPopCoin
+Plant	90	3	0x00398114	Plant, PlantOneUp, PlantPopCoin
+WoodBox	90	6	0x00398794	WoodBox, WoodBoxFireFlower, WoodBoxKinokoSuperFast, WoodBoxOneUp, WoodBoxPopCoin, WoodBoxSuperLeaf
+LavaConveyer	90	3	0x00396894	KoopaSecondBeltConveyer6x6M, KoopaSecondBeltConveyerRotateStep, KoopaSecondBeltConveyerStepGuard
+KoopaPillar	87	2	0x003964dc	KoopaLavaBreakPillar, KoopaPillar2x4x2M
+Teresa	85	3	0x003983ec	Teresa, TeresaBig, TeresaTail
+KinopioHouseExitArea	80	1	0x00398f3c	KinopioHouseExitArea
+Kuribo	79	1	0x00398344	Kuribo
+PoleGoal	79	2		PoleGoal, PoleGoalLast
+SoundEmitArea	77	1	0x00398e1c	SoundEmitArea
+VisibleSwitchMapParts	76	48	0x00397d44	AquariumSwimStepA, AquariumSwimStepASurface, AquariumSwimStepBWall, AquariumSwimStepBWallB, BoomerangMountainWallB, CavePatanGoalWall
+TentenGenerator	74	2	0x003973c4	TentenGenerator, TentenWingGenerator
+SwingNeedleRoller	74	2	0x00397884	SwingNeedleRoller, SwingNeedleRoller8M
+ClockMapParts	65	14	0x00396a54	CaveInkRotateStick, CaveInkRotateStickCover, InsideClockGearC, InsideClockStick, StopRotatePartsA, StopRotatePartsASp
+Dokan	64	3	0x00397f8c	Dokan, DokanOutOnly, DokanSide
+Kinopio	62	2	0x003985e4	Kinopio, KinopioRaccoonDog
+CameraOriginArea	58	1	0x00398f3c	CameraOriginArea
+RestartObj	57	1	0x003960ec	RestartObj
+EffectObjFollowCamera	56	12	0x00397c9c	EffectObjBreeze, EffectObjConfetti, EffectObjFireFly, EffectObjFireFlyTeresa, EffectObjIncidentRay, EffectObjLensFilterBright
+Bug	55	1	0x00397dec	Bug
+PatanBoardStarter	55	1	0x00397814	PatanBoardStarter
+BlockRailTerminater	54	2	0x0039799c	BlockRailTerminater, KoopaLavaTruckRailTerminater
+GororiGenerator	54	5	0x0039724c	GororiBigGenerator, GororiBigGeneratorAir, GororiGenerator, GororiGeneratorAir, GororiSearchGenerator
+CoinRailMoveGenerator	53	1	0x00397c2c	CoinRailMove
+TeresaRail	52	1	0x00396194	TeresaRail
+BlockNote	52	2	0x00398a34	BlockNote1x1, BlockNoteWide
+BlockQuestionLong	51	4	0x0039769c	BlockQuestionLongCoin, BlockQuestionLongCoin10, BlockQuestionLongFireFlower, BlockQuestionLongSuperLeaf
+StickSnapOffArea	47	1	0x00398f3c	StickSnapOffArea
+KeyMoveAndFallParts	47	11	0x00397a34	LiftTeresaLiftB, WoodFallBoard1x5, WoodFallBoard2x12, WoodFallBoard2x5, WoodFallBoard3x4, WoodFallBoard4x4A
+Bubble	46	1	0x00398184	Bubble
+KillerGenerator	46	3	0x003972e4	KillerGenerator, KillerMagnumGenerator, KillerTailGenerator
+Togezo	45	1	0x00398424	Togezo
+BlockQuestionFlying	44	4	0x00397964	BlockQuestionFlyingCoin, BlockQuestionFlyingCoin10, BlockQuestionFlyingOneUp, BlockRouletteFlying
+Poo	43	2	0x00397e24	Poo, PooDokan
+Garigari	41	1	0x0039883c	Garigari
+CollapseMapParts	40	3	0x003974dc	KoopaLastCollapseStepC4x8MShort, KoopaLastCollapseStepC8x8MShort, KoopaLastCollapseStepCShort
+TogeMetbo	39	1	0x00398d6c	TogeMetbo
+NeedleRoller	38	2	0x003968cc	NeedleRoller, NeedleRollerFreeMove
+CoinRing	37	1	0x00398804	CoinRing
+InvalidatePropellerCameraArea	37	1	0x00398f3c	InvalidatePropellerCameraArea
+ShadowObj	37	1	0x00398da4	ShadowObj
+LavaGeyser	37	2	0x00395f2c	LavaGeyser16M, LavaGeyser4M
+WarpDoor	37	3	0x00398954	WarpDoor, WarpDoorKinopio, WarpDoorTeresa
+CoinRedStarter	36	1	0x00396e24	CoinRedStarter
+DemoCamera	36	1		DemoCamera
+SlideMapParts	36	3	0x00396c04	CloudLift6M, DesertRuinLiftA, DesertRuinLiftASp
+PlayerRestrictedPlane	34	1	0x00398eec	PlayerRestrictedPlane
+BoomerangBros	32	1	0x00396a1c	BoomerangBros
+SoundEmitObj	32	1	0x00396974	SoundEmitObj
+BgmChangeArea	30	1	0x00398f3c	BgmChangeArea
+Sokuten	30	1	0x00398724	Sokuten
+GhostPlayerArea	29	1	0x00398f3c	GhostPlayerArea
+Kabehei	29	1	0x003985ac	Kabehei
+TrampleSwitch	28	1	0x00396cac	TrampleSwitch
+EntranceCameraObj	28	1	0x003977a4	EntranceCameraObj
+BalanceTruck	27	1	0x003966d4	BalanceTruck
+ChorobonGenerator	26	1	0x00397734	ChorobonGenerator
+DemoPlayer	26	1		DemoPlayer
+PackunFlower	26	2	0x00396904	PackunFlower, PackunFlowerDokan
+NeedlePlant	25	1	0x0039662c	NeedlePlant
+CameraWaveArea	25	1	0x00398f3c	CameraWaveArea
+HammerBros	24	1	0x00395ebc	HammerBros
+KuriboTower	24	1	0x0039654c	KuriboTower
+Karon	24	1	0x00398034	Karon
+FallStone	24	1	0x00398aa4	FallStone
+SuperLeaf	23	1	0x00398c8c	SuperLeaf
+SwingMapParts	23	5	0x00396c74	PyramidSpikeElevatorC, TrickTeresaBlackKey, TrickTeresaWhiteKeyA, TrickTeresaWhiteKeyB, TrickTeresaWhiteKeyC
+Seagull	22	1	0x003986ec	Seagull
+FogAreaCameraPos	22	1	0x00398f3c	FogAreaCameraPos
+Kameck	22	1	0x003982d4	Kameck
+LiftGeyserStep	22	1	0x00396e94	KoopaFloor6x6M
+FireBarCore	22	2	0x003963c4	FireBar4m, FireBar8m
+LiftGeyser	21	2	0x00395f64	LiftGeyser, LiftGeyserLava
+SwingLift	21	2	0x00398cfc	SwingLift10M, SwingLift5M
+WaterArea	20	1	0x00398f3c	WaterArea
+SpikeStick	20	1	0x00396124	SpikeStick
+NeedleBarCore	19	1	0x00396b5c	NeedleBarCore
+PoleGoalSuper	18	1		PoleGoalSuper
+SamboHead	18	1	0x00398c54	SamboHead
+KickStone	18	1	0x00398b4c	KickStonePopCoin
+Pole	18	1	0x00397f1c	Pole
+Dossun	18	1	0x0039822c	Dossun
+BombHei	18	1	0x00398504	BombHei
+WooGanSand	17	1	0x003962ac	WooGanSand
+KuriboTailSearch	17	1	0x00397584	KuriboTailSearch
+KuriboTail	17	2	0x00395ef4	KuriboTail, KuriboTailBig
+PackunFire	16	1	0x00395fd4	PackunFire
+BlockRoulette	16	1	0x003969e4	BlockRoulette
+EnemyCounter	16	1	0x0039670c	EnemyCounter
+MysteryBoxRuleObj	16	1		MysteryBoxRuleObj
+Telescope	15	1	0x00398d34	Telescope
+KoopaFireGenerator	15	1	0x0039792c	KoopaFireGenerator
+GeneratorBoxHop	15	2	0x00397214	GeneratorBoxHop, GeneratorBoxHopSmall
+BlockRailCurve	15	4	0x00396dfc	BlockRailCurve12x12M, BlockRailCurve8x8M, KoopaLavaTruckRailCurve12x12M, KoopaLavaTruckRailCurve8x8M
+FrameOutChecker	15	3	0x003971dc	FrameOutChecker, FrameOutCheckerLeftBottom, FrameOutCheckerLeftRightBottom
+CoinGathering	14	1	0x00396a8c	CoinGathering
+Wanwan	14	1	0x00398494	Wanwan
+DemoPhoto	14	1		DemoPhoto
+RailDotDrawer	14	1	0x00396bcc	RailDotDrawer
+Pukupuku	13	1	0x003988e4	Pukupuku
+BombHeiTailGenerator	13	1	0x00397b14	BombHeiTailGenerator
+BlindCloud	13	1	0x00395d6c	BlindCloud
+CoinRailGenerator	12	1	0x0039776c	CoinRailGenerator
+BlockDragonGenerator	12	1	0x00397adc	BlockDragon
+UpperBlock	12	1	0x0039623c	UpperBlock
+BridgePukupukuBreakBridge	12	1	0x00397db4	BridgePukupukuBreakBridge
+WheelMapParts	12	5	0x00396d54	LavaWheelLarge, LavaWheelNutA, LavaWheelRoller, LavaWheelSmall, LavaWheelStair
+NoteObjGenerator	11	1	0x003975bc	NoteObjGenerator
+StartEventHurryUp	11	1	0x0039af1c	StartEventHurryUp
+GyroLauncher	11	1	0x003967ec	GyroLauncher
+PukupukuGenerator	11	1	0x0039784c	PukupukuGenerator
+GamaguchiKun	11	1	0x0039677c	GamaguchiKun
+DemoSceneSwitch	11	1		DemoSceneSwitch
+Meragon	11	1	0x0039861c	Meragon
+WooGan	11	1	0x003984cc	WooGan
+GhostPlayer	11	2	0x00396434	GhostPlayer, GhostPlayerBig
+Picket	11	4	0x0039837c	Picket, PicketCoin, PicketCoin3, PicketSuperLeaf
+PlayerControlOffArea	10	1	0x00398f3c	PlayerControlOffArea
+TreeA	10	1	0x0039814c	TreeA
+GeneratorEnemy	10	1	0x00396e5c	GeneratorEnemy
+GoalDoor	10	1		GoalDoor
+Choropu	10	1	0x0039853c	Choropu
+Gesso	9	1	0x00397fc4	Gesso
+Hoppun	9	1	0x0039829c	Hoppun
+PackunInk	9	1	0x00398be4	PackunInk
+SwingSpike	9	1	0x0039615c	SwingSpike8M
+Nokonoko	9	1	0x00398874	Nokonoko
+GroundRiserAttachment	9	1	0x00397cd4	GroundRiserAttachment
+WarpAreaPoint	9	1	0x00396ce4	WarpAreaPoint
+KinokoPoison	9	1	0x0039685c	KinokoPoison
+FugumannenGenerator	8	1	0x003979fc	FugumannenGenerator
+SpotLightArea	8	1	0x00398e44	SpotLightArea
+FloaterMapParts	8	1	0x003971a4	LavaFloater6x6M
+Koopa	8	2	0x0039806c	Koopa, KoopaLast
+AquariumSwimDebris	7	1	0x003978bc	AquariumSwimDebris
+Utsubo	7	1	0x0039845c	Utsubo
+KinokoSuper	7	1	0x003964a4	KinokoSuper
+WarpPorter	7	1	0x00396274	WarpPorter
+SuperStar	7	1	0x00398cc4	SuperStar
+StartEventGhost	7	1	0x0039aeac	StartEventGhost
+CandlestandObserver	7	1	0x003979c4	CandlestandObserver
+KickKoura	7	1	0x00398b14	KickKoura
+BlockNoteSuper	7	1	0x00396dc4	BlockNoteSuperWide
+EffectObjSwitch	7	2	0x0039716c	EffectObjLavaTruckSplash, EffectObjLavaWheelLargeSink
+SeesawMapParts	7	3	0x00396f3c	NeedleRollerSeesawA, SeesawPanel4x8M, SeesawPanelGuard4x8M
+Fugumannen	6	1	0x00395e84	Fugumannen
+WaterFlowCube	6	1	0x00396d1c	WaterFlowCube
+StartEventDokan	6	1	0x0039aee4	StartEventDokan
+Indy	6	1	0x00397ee4	Indy
+EffectObjSensor	6	2	0x003970fc	EffectObjWaterfallAppear, EffectObjWooGanContact
+PresentBox	6	3	0x003960b4	PresentBoxBoomerangFlowerForce, PresentBoxFireFlowerForce, PresentBoxSuperLeafForce
+Chorobon	5	1	0x003987cc	Chorobon
+CoinGenerator	4	1	0x00396ab4	CoinGenerator
+StartEventBattleShip	4	1	0x0039aeac	StartEventBattleShip
+WaterFallArea	4	1	0x00398f3c	WaterFallArea
+DemoSceneGolePole	4	1		DemoSceneGolePole
+CoinBox	4	1	0x00398574	CoinBox
+TrickHintPanel	4	1	0x00396f74	TrickHintPanel
+StartEventTeresa	4	1	0x0039aee4	StartEventTeresa
+Trilift	4	1	0x0039875c	InsideClockTriliftA
+FireFlower	4	1	0x00395e4c	FireFlower
+Bunbun	4	2	0x003981bc	Bunbun, BunbunVs2
+WarpLift	4	2	0x0039898c	TrickTeresaGoalLift, TrickTeresaWarpLift
+StartEventBattleShipSpecial	3	1	0x0039aeac	StartEventBattleShipSpecial
+BeatBlockHolder	3	1	0x00396fe4	BeatBlockHolder
+PlayerAlongWallArea	3	1	0x00398f3c	PlayerAlongWallArea
+StartEventDoor	3	1	0x0039aee4	StartEventDoor
+BombHeiTail	3	1	0x003962e4	BombHeiTail
+Punpun	3	2	0x003983b4	Punpun, PunpunVs2
+BugFixBalanceTruckArea	2	1	0x00398f3c	BugFixBalanceTruckArea
+StartEventBattleShipSpecialEvening	2	1	0x0039aeac	StartEventBattleShipSpecialEvening
+BunbunAndPunpunTagObj	2	1	0x00397bf4	BunbunAndPunpunTagObj
+DossunTail	2	1	0x00395e14	DossunTail
+BoomerangFlower	2	1	0x0039701c	BoomerangFlower
+DokanWorldWarp	2	1		DokanWorldWarp
+EnablePropellerFallCameraArea	2	1	0x00398f3c	EnablePropellerFallCameraArea
+PukupukuLoopRail	2	1	0x003975f4	PukupukuLoopRail
+StartEventFortress	2	1	0x0039aeac	StartEventFortress
+Luigi	2	1	0x003980a4	Luigi
+DemoStarter	2	1	0x0039638c	DemoStarterDemoBeforeEndingStage
+StartEventKoopaLast	2	1	0x0039aeac	StartEventKoopaLast
+BoneRollerCoaster	2	1	0x003976fc	BoneRollerCoasterParts
+GoAndReturnParts	2	1	0x00397514	KoopaThirdUpStepB
+NutLift	2	1	0x0039867c	LavaWheelNutB
+PropellerBlock	2	1	0x00396ecc	PropellerBlock
+NeedleFloor	2	2	0x003965f4	NeedleFloorInside, NeedleFloorOutside
+StartEventBattleShipEvening	1	1	0x0039aeac	StartEventBattleShipEvening
+PunpunStageDamageFire	1	1	0x00397d0c	PunpunStageDamageFire
+FootPrintFollowPosArea	1	1	0x00398f3c	FootPrintFollowPosArea
+WobbleMapParts	1	1	0x00396fac	BoomerangMountainBalancePassage
+SwitchSlideMapParts	1	1	0x00397a6c	BoomerangMountainLift
+GeneratorBox	1	1	0x003967b4	GeneratorBox
+StickFixArea	1	1	0x00398f3c	StickFixArea
+SuperLeafSpecial	1	1	0x00397664	SuperLeafSpecial
+StartEventFirstStage	1	1	0x0039af54	StartEventFirstStage
+PhotoAlbum	1	1	0x0039607c	PhotoAlbum
+StartEventLuigiPrison	1	1	0x0039af8c	StartEventLuigiPrison
+KoopaDoorLast	1	1	0x00396b24	KoopaLastDoor
+StartEventCastleBig	1	1	0x0039aeac	StartEventCastleBig
+AudioVolumeSettingArea	1	1	0x00398f14	AudioVolumeSettingArea
+StartEventCastle	1	1	0x0039aeac	StartEventCastle
+StreetPassObj	1	1	0x00396c3c	StreetPassObj
+PatapataWing	1	1	0x0039693c	PatapataWing
+PlayerInclinedControlArea	1	1	0x00398f3c	PlayerInclinedControlArea
+KickStoneStrong	1	1	0x003972bc	KickStoneStrongPopCoin5

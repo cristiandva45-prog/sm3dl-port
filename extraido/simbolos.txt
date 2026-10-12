@@ -1,0 +1,951 @@
+0x00100760 GetResourceLimitCurrentValue  # CONFIRMADO: svc 0x38 (via 0x1008C0) + svc 0x3A + svc 0x23 CloseHandle
+0x001008C0 svcGetResourceLimit  # CONFIRMADO: wrapper fino, svc 0x38
+0x001012C8 CFGU_Initialize  # CONFIRMADO: GetServiceHandle(cfg:u) -> handle 0x3E2670
+0x00101418 NDMU_SuspendScheduler  # CONFIRMADO: header 0x00080040, svc 0x32 en 0x10143C, servicio ndm:u
+0x00101B24 svcCreateAddressArbiter  # CONFIRMADO: wrapper fino, svc 0x21
+0x00102AF8 SRV_RegisterClient  # CONFIRMADO: header 0x00010002, svc 0x32 en 0x102B1C, servicio srv:
+0x00102B34 SRV_EnableNotification  # CONFIRMADO: header 0x00020000, svc 0x32 en 0x102B54, servicio srv:
+0x00103080 APT_Initialize  # CONFIRMADO: header 0x00020080, svc 0x32 en 0x1030A8, servicio APT:U
+0x001030D4 APT_GetLockHandle  # CONFIRMADO: header 0x00010040, svc 0x32 en 0x1030FC, servicio APT:U
+0x00103130 APT_Enable  # CONFIRMADO: header 0x00030040, svc 0x32 en 0x103150, servicio APT:U
+0x001038A0 svcCreateThread  # CONFIRMADO: wrapper fino, svc 0x08 en 0x1038AC
+0x00103E8C FS_Initialize  # CONFIRMADO: GetServiceHandle("fs:USER" en 0x3A48E7) -> handle 0x3EF00C
+0x0010415C NDMU_OverrideDefaultDaemons  # CONFIRMADO: header 0x00140040, svc 0x32 en 0x10417C, servicio ndm:u
+0x00104194 SRV_ReceiveNotification  # CONFIRMADO: header 0x000B0000, svc 0x32 en 0x1041B4, servicio srv:
+0x001046EC APT_SleepSystem  # HIPOTESIS: header 0x00420080, svc 0x32 en 0x10470C, servicio APT:U
+0x00104724 APT_CloseApplication  # CONFIRMADO: header 0x00270044, svc 0x32 en 0x10475C, servicio APT:U
+0x00104774 APT_InquireNotification  # CONFIRMADO: header 0x000B0040, svc 0x32 en 0x104798, servicio APT:U
+0x001047BC APT_PrepareToCloseApplication  # CONFIRMADO: header 0x00220040, svc 0x32 en 0x1047E0, servicio APT:U
+0x001056A0 CFGU_GetConfigInfoBlk2  # CONFIRMADO: header 0x00010082, svc 0x32 en 0x1056D0, servicio cfg:u
+0x001059BC APT_NotifyToWait  # CONFIRMADO: header 0x00430040, svc 0x32 en 0x1059DC, servicio APT:U
+0x001059F4 APT_CancelLibraryApplet  # HIPOTESIS: header 0x003B0040, svc 0x32 en 0x105A18, servicio APT:U
+0x00107404 svcGetThreadPriority  # CONFIRMADO: wrapper fino, svc 0x0B
+0x0010756C FSUSER_Initialize  # CONFIRMADO: header 0x08010002, svc 0x32 en 0x10758C, servicio fs:USER
+0x00107740 ERRF_ThrowFatalError  # CONFIRMADO: header 0x00010800, svc 0x32 en 0x107768, servicio err:f
+0x00107A24 GSPGPU_Initialize  # CONFIRMADO: GetServiceHandle(gsp::Gpu, nombre via puntero 0x3E2698) -> handle 0x3E2694, AcquireRight, init de eventos/memoria compartida
+0x00107C20 GSPGPU_ReleaseRight  # CONFIRMADO: header 0x00170000, svc 0x32 en 0x107C38, servicio gsp::Gpu
+0x00107C48 GSPGPU_RestoreVramSysArea  # CONFIRMADO: header 0x001A0000, svc 0x32 en 0x107C60, servicio gsp::Gpu
+0x00107D58 APT_AppletUtility  # CONFIRMADO: header 0x004B00C2, svc 0x32 en 0x107DAC, servicio APT:U
+0x00107DD4 APT_SendParameter  # CONFIRMADO: header 0x000C0104, svc 0x32 en 0x107E14, servicio APT:U
+0x00107E2C APT_CancelParameter  # CONFIRMADO: header 0x000F0100, svc 0x32 en 0x107E64, servicio APT:U
+0x00107E8C APT_GlanceParameter  # CONFIRMADO: header 0x000E0080, svc 0x32 en 0x107EE8, servicio APT:U
+0x00107F28 APT_ReplySleepQuery  # CONFIRMADO: header 0x003E0080, svc 0x32 en 0x107F50, servicio APT:U
+0x00107F6C APT_ReceiveParameter  # CONFIRMADO: header 0x000D0080, svc 0x32 en 0x107FC8, servicio APT:U
+0x00108008 SvcX3E3190_Cmd3C_GetU8  # HIPOTESIS: header 0x003C0000, svc 0x32 en 0x108028, servicio desconocido (handle 0x3E3190)
+0x00108048 SvcX3E3190_Cmd3B_GetU8  # HIPOTESIS: header 0x003B0000, svc 0x32 en 0x108068, servicio desconocido (handle 0x3E3190)
+0x001095F4 GSP_InitEventsAndSharedMem  # CONFIRMADO: CreateEvent + GSPGPU_RegisterInterruptRelayQueue; cola GX en shm+0x800+idx*0x200, info de framebuffer superior en shm+0x200+idx*0x80 e inferior en +0x40; hilo de eventos GSP
+0x001099B0 GSPGPU_WriteHWRegs  # CONFIRMADO: header 0x00010082, svc 0x32 en 0x109A08, servicio gsp::Gpu
+0x00109A1C GSPGPU_AcquireRight  # CONFIRMADO: header 0x00160042, svc 0x32 en 0x109A48, servicio gsp::Gpu
+0x00109A60 GSPGPU_WriteHWRegsWithMask  # CONFIRMADO: header 0x00020084, svc 0x32 en 0x109AA8, servicio gsp::Gpu
+0x00109ABC APT_ReplySleepNotificationComplete  # CONFIRMADO: header 0x003F0040, svc 0x32 en 0x109ADC, servicio APT:U
+0x0010A0D0 nngx_AddDmaRequest  # CONFIRMADO: shim a GX_RequestDma (caso 0 del ejecutor 0x28C638)
+0x0010A0EC nngx_AddDisplayTransfer  # CONFIRMADO: shim a GX_DisplayTransfer (caso 3)
+0x0010A128 nngx_AddMemoryFill  # CONFIRMADO: shim a GX_MemoryFill (caso 2)
+0x0010A168 nngx_AddTextureCopy  # CONFIRMADO: shim a GX_TextureCopy (caso 4)
+0x0010A8B8 GX_RequestDma  # CONFIRMADO: comando GX id 0 (src, dst, tamano), solo si dst esta en VRAM (0x1F000000) o sin flush
+0x0010A980 GX_MemoryFill  # CONFIRMADO: comando GX id 2 (dos buffers: inicio, valor, fin, control)
+0x0010AA04 GX_ProcessCommandList  # CONFIRMADO: comando GX id 5 (FlushCacheRegions) opcional + id 1 (ProcessCommandList: buf, tamano, flags)
+0x0010AAC0 GX_TextureCopy  # CONFIRMADO: comando GX id 4 (src, dst, tamano, gaps in/out, flags)
+0x0010AD58 GX_DisplayTransfer  # CONFIRMADO: comando GX id 3 (src, dimensiones in/out empaquetadas w|h<<16, flags)
+0x0010ADD4 GSPGPU_ReadHWRegs  # CONFIRMADO: header 0x00040080, svc 0x32 en 0x10AE10, servicio gsp::Gpu
+0x0010AE28 GSPGPU_RegisterInterruptRelayQueue  # CONFIRMADO: header 0x00130042, svc 0x32 en 0x10AE54, servicio gsp::Gpu
+0x0010B8EC GSPGPU_TriggerCmdReqQueue  # CONFIRMADO: header 0x000C0000, svc 0x32 en 0x10B904, servicio gsp::Gpu
+0x0010C56C svcCloseHandle  # CONFIRMADO: svc 0x23 + bx lr (las otras 56 CloseHandle estan inline)
+0x0010C574 svcCreateMemoryBlock  # CONFIRMADO: wrapper fino, svc 0x1E
+0x0010C590 svcCreateMutex  # CONFIRMADO: wrapper fino, svc 0x13
+0x0010C5A8 svcDuplicateHandle  # CONFIRMADO: wrapper fino, svc 0x27
+0x00117710 AppearStep__ctor
+0x00117d50 BlindCloud__ctor
+0x00118314 BlockBrick__ctor
+0x00119de0 DossunTail__ctor
+0x0011a5b4 Fugumannen__ctor
+0x0011b52c HammerBros__ctor
+0x0011e858 LavaGeyser__ctor
+0x0011e9f0 LiftGeyser__ctor
+0x0011ec3c NeedleTrap__ctor
+0x0011f1bc PackunFire__ctor
+0x001202e8 PataKuribo__ctor
+0x0012091c PatanBoard__ctor
+0x00120dc0 PhotoAlbum__ctor
+0x0012179c PresentBox__ctor
+0x00121e58 RestartObj__ctor
+0x001225b0 SpikeStick__ctor
+0x001233E0 StageScene_initPlayer  # HIPOTESIS: busca "StartInfo"/"MarioNo" en la colocacion, new 0x15C + PlayerActor__ctor, guarda en escena+0x38
+0x00124d8c SwingSpike__ctor
+0x001251e8 TeresaRail__ctor
+0x0012561c TimerClock__ctor
+0x00125954 TitleScene_initPlayer  # HIPOTESIS: igual patron con StartInfo/MarioNo, contexto "TitleScene"
+0x00127734 Trampoline__ctor
+0x00127b10 UpperBlock__ctor
+0x00127e40 WarpPorter__ctor
+0x00128d80 WooGanSand__ctor
+0x0012a638 BombHeiTail__ctor
+0x0012a88c Candlestand__ctor
+0x0012c1d0 FireBarCore__ctor
+0x0012c320 FixMapParts__ctor
+0x0012cbe0 GhostPlayer__ctor
+0x0012d5dc KinokoOneUp__ctor
+0x0012e22c KoopaPillar__ctor
+0x0012f1fc KuriboTower__ctor
+0x0012f644 MarinePlant__ctor
+0x0012fab0 NeedleBlock__ctor
+0x0012fe60 NeedleFloor__ctor
+0x001301a4 NeedlePlant__ctor
+0x001302C4 PlayerActor_receiveMsg  # CONFIRMADO: vtable pos 13; filtra sensor "TailAttack", despacha a 0x00131304/0x001318BC
+0x00130430 PlayerActor_attackSensor  # CONFIRMADO: vtable pos 12; maneja "TailAttack", "HipDropStart", "SwimHipDropStart"
+0x00131AB4 PlayerActor_initPlayer  # CONFIRMADO: vtable pos 24 (+0x60), invocado tras el ctor con (ActorInitInfo, tabla de recursos); crea sensores Foot/TailAttack, nucleo 0xF8, "PlayerHitReaction", "ActorHitReactionCtrlPlayer", sets "MarioAnimation"
+0x00132A58 PlayerActor_movement  # HIPOTESIS: override de vtable pos 7 (GameActor 0x0026DF3C, al que llama al final); actualiza nucleo +0x74, modelo +0xAC, entrada
+0x00133484 PlayerInput_update  # HIPOTESIS: lee botones del puerto 0 (0x0026DB90/BBC/BE8/C14, 0x002CExxx) y stick 0x0026DB44(0); calcula vector 3D relativo a camara
+0x00133A2C PlayerInput_applyStickSnap  # CONFIRMADO: usa areas "StickSnapOffArea" y "PlayerWidenStickXSnapArea" sobre el vector del stick
+0x00133D34 PlayerInput__ctor  # HIPOTESIS(nombre): objeto 0x6C en jugador+0x78 (initPlayer pone +0x58=jugador), vtable 0x003C6978
+0x00133fbc StickNeedle__ctor
+0x0013416c TeresaGroup__ctor
+0x00135418 BalanceTruck__ctor
+0x00136f1c EnemyCounter__ctor
+0x00137060 FallMapParts__ctor
+0x00138a0c GamaguchiKun__ctor
+0x0013a014 GeneratorBox__ctor
+0x0013baf8 GyroLauncher__ctor
+0x0013c6b8 KinokoPoison__ctor
+0x0013c8a4 LavaConveyer__ctor
+0x0013d0f4 NeedleRoller__ctor
+0x0013d8c4 PackunFlower__ctor
+0x0013dbf0 PatapataWing__ctor
+0x0013e514 SoundEmitObj__ctor
+0x0013e914 BlockQuestion__ctor
+0x0013efec BlockRoulette__ctor
+0x0013fcd4 BoomerangBros__ctor
+0x001406e0 ClockMapParts__ctor
+0x00140ab0 CoinGenerator__ctor
+0x0014187c JumpFlipBoard__ctor
+0x00141c98 KoopaDoorLast__ctor
+0x00143584 NeedleBarCore__ctor
+0x00143740 PeachForTitle__ctor
+0x00143a88 RailDotDrawer__ctor
+0x00143dd4 SlideMapParts__ctor
+0x00144df4 StreetPassObj__ctor
+0x00144ff0 SwingMapParts__ctor
+0x001454cc TrampleSwitch__ctor
+0x001457d8 WarpAreaPoint__ctor
+0x00145a60 WaterFlowCube__ctor
+0x00146330 WheelMapParts__ctor
+0x00146b34 BlockBrickItem__ctor
+0x001475f4 BlockNoteSuper__ctor
+0x00149b78 CoinRedStarter__ctor
+0x0014cb1c GeneratorEnemy__ctor
+0x0014e138 LiftGeyserStep__ctor
+0x00151EA0 PlayerFireBall_init  # CONFIRMADO: initActorWithArchiveName "MarioFireBall"
+0x00152758 getPlayerAnimTableDemo  # CONFIRMADO: devuelve 0x003B95C0 (MarioAnimationDemo, PlayerDemo)
+0x00152764 getPlayerAnimTableDemoKoopa  # CONFIRMADO: devuelve 0x003B95F8 (MarioAnimationDemoKoopa); elegido si ModelName=="Koopa"
+0x00152770 getPlayerAnimTableDemoKoopaLast  # CONFIRMADO: devuelve 0x003B9614 (MarioAnimationDemoKoopaLast); ModelName=="KoopaLast"
+0x0015277C getPlayerAnimTableCourseSelect  # CONFIRMADO: devuelve 0x003B95DC (grupo Player:CourseSelect)
+0x001534e8 PropellerBlock__ctor
+0x00153e9c RotateMapParts__ctor
+0x0015425c SeesawMapParts__ctor
+0x00154664 StartEventBattleShip__ctor
+0x001551ec TrickHintPanel__ctor
+0x00155928 WobbleMapParts__ctor
+0x0015695c BeatBlockHolder__ctor
+0x00157c04 BoomerangFlower__ctor
+0x00159f54 CandlestandFire__ctor
+0x0015a5e0 CourseSelectObj__ctor
+0x0015b0f8 EffectObjReEmit__ctor
+0x0015b1f4 EffectObjSensor__ctor
+0x0015b2bc EffectObjStream__ctor
+0x0015b40c EffectObjSwitch__ctor
+0x0015b730 FloaterMapParts__ctor
+0x0015C220 PlayerAnimSet__ctor  # HIPOTESIS: objeto 0x30 creado 2 veces en initPlayer con "MarioAnimation" (normal y "%sRaccoonDog"), jugador+0x118/+0x11C
+0x0015c4fc FrameOutChecker__ctor
+0x0015d014 GeneratorBoxHop__ctor
+0x0015d824 GororiGenerator__ctor
+0x0015e764 KeyMoveMapParts__ctor
+0x0015e9b8 KillerGenerator__ctor
+0x0015ea58 KinokoOneUpFast__ctor
+0x0015eac4 KinokoSuperFast__ctor
+0x00162074 PlayerModelHolder_createFire  # CONFIRMADO: texto "ファイアモデル" (modelo Fuego)
+0x00162114 PlayerModelHolder_createAssist  # CONFIRMADO: texto "お助けモデル" (modelo de ayuda = tanuki blanco, RaccoonDogWhite)
+0x00162228 PlayerModelHolder_createMini  # CONFIRMADO: texto "ちびモデル" (modelo chiquito), "MarioHand"
+0x001623C8 PlayerModelHolder_createSuper  # CONFIRMADO: texto "スーパーモデル" (modelo Super), "CounterStop"
+0x001624C4 PlayerModelHolder_createBoomerang  # CONFIRMADO: texto "ブーメランモデル" (modelo Boomerang)
+0x00162564 PlayerModelHolder_createTanuki  # CONFIRMADO: texto "たぬきモデル" (modelo Tanuki), "Tail1"
+0x00162678 PlayerModelHolder_createTanukiSpecial  # CONFIRMADO: texto "特殊たぬきモデル" (tanuki especial = RaccoonDogSpecial)
+0x00163318 GameSequence_init  # HIPOTESIS(nombre): addNerveState Title/Opening/CourseSelect/Stage/KinopioHouse/MysteryBox/Ending/GameOverRoom; crea el hilo de carga del jugador
+0x00166c98 StartEventDokan__ctor
+0x00166f00 TelescopeTarget__ctor
+0x00167434 TentenGenerator__ctor
+0x0016756c TransparentWall__ctor
+0x001675D4 EnemyStateFall__ctor  # HIPOTESIS: Kuribo "[state]落下"; 1 llamada
+0x00168a30 BlockTransparent__ctor
+0x00168bd8 BombHeiGenerator__ctor
+0x00169454 BunbunMysteryBox__ctor
+0x00169fc4 CollapseMapParts__ctor
+0x0016c464 GoAndReturnParts__ctor
+0x0016cf50 KinokoPoisonFast__ctor
+0x00171828 NoteObjGenerator__ctor
+0x00173B54 PlayerStateJump__ctor  # HIPOTESIS: objeto 0x70, vtable 0x003CC37C, anims Jump/Jump2/Jump3/LandTurn/Land
+0x00174838 PlayerStateSwimPaddle__ctor  # HIPOTESIS: objeto 0xC, vtable 0x003CC408, anims SwimPaddle/SwimWait
+0x00174C10 PlayerStateWaitRun__ctor  # HIPOTESIS: objeto 0xC, vtable 0x003CC450, anims Wait/DashSign
+0x00176094 PukupukuLoopRail__ctor
+0x00176758 RailMoveMapParts__ctor
+0x001781E4 getHitSensorTypeFromName  # CONFIRMADO: recorre la tabla 0x3F02B8 con isEqualString; default 10 (MapObj)
+0x00178a44 BlockQuestionLong__ctor
+0x00179a3c BoneRollerCoaster__ctor
+0x0017adf4 ChorobonGenerator__ctor
+0x0017b30c CoinRailGenerator__ctor
+0x0017C7F8 StageScene_exePlay  # HIPOTESIS: funcion de nerve de escena (0 llamadas directas) que llama SceneActorKit_updateAll(scene,1)
+0x0017e288 EntranceCameraObj__ctor
+0x0017fbac KoopaCollapseStep__ctor
+0x00181064 PatanBoardStarter__ctor
+0x00181284 PlayerStateWallSlide__ctor  # HIPOTESIS: objeto 0xC, vtable 0x003CD8C8, anims WallKeep/WallSlideR/WallSlideL
+0x00182C10 PlayerModelHolder__ctor  # CONFIRMADO: objeto 0x50 en jugador+0xA4; crea los 7 modelos por forma (slots +0x10..+0x28)
+0x001846cc PukupukuGenerator__ctor
+0x0018533c StartEventHurryUp__ctor
+0x00185df4 SwingNeedleRoller__ctor
+0x001861D8 EnemyStateAttack__ctor  # HIPOTESIS: Kuribo lo registra como "[state]攻撃"; 2 llamadas
+0x00186d3c AquariumSwimDebris__ctor
+0x00189088 EffectObjLiftLiner__ctor
+0x00189478 KoopaFireGenerator__ctor
+0x0018A388 PlayerStateDamage__ctor  # HIPOTESIS: objeto 0x20, vtable 0x003CE268, anim DamageSmall
+0x0018B5C4 EnemyStatePopOut__ctor  # HIPOTESIS: Kuribo "[state]飛び出し"; 2 llamadas
+0x0018c020 BlockQuestionFlying__ctor
+0x0018c630 CandlestandObserver__ctor
+0x0018d354 FugumannenGenerator__ctor
+0x0018ddbc KeyMoveAndFallParts__ctor
+0x0018EB9C PlayerStateHipDrop__ctor  # HIPOTESIS: objeto 0x30, vtable 0x003CE8D0, anims HipDropStart/HipDropLand
+0x001909f0 SwitchSlideMapParts__ctor
+0x001928b8 AttackRevolvingPanel__ctor
+0x0019347c BlockDragonGenerator__ctor
+0x00193c24 BombHeiTailGenerator__ctor
+0x00195928 GeneratorBoxHopChild__ctor
+0x00197EE8 PlayerStateWallJump__ctor  # HIPOTESIS: objeto 0x64, vtable 0x003CF2A8, anims Fall/WallJump
+0x00199648 RollingShakeMapParts__ctor
+0x001997d8 StartEventFirstStage__ctor
+0x00199a50 SwitchRotateMapParts__ctor
+0x0019a0dc BunbunAndPunpunTagObj__ctor
+0x0019b4ac CoinRailMoveGenerator__ctor
+0x0019b9f4 CollapseBreakMapParts__ctor
+0x0019c658 EffectObjFollowCamera__ctor
+0x0019d1fc GroundRiserAttachment__ctor
+0x0019DC40 PlayerStateBackJump__ctor  # HIPOTESIS: objeto 0x64, vtable 0x003CFBE8, anims JumpBack/JumpBackHigh, SePvJumpSquat
+0x0019E5CC PlayerStateSquat__ctor  # HIPOTESIS: objeto 0x34, vtable 0x003CFC64, anims SquatWait/SquatWalk
+0x0019EFAC PlayerStateSwim__ctor  # HIPOTESIS: objeto 0x34, vtable 0x003CFC98, anims SwimStandWait/SwimSquat
+0x001a01d4 PunpunStageDamageFire__ctor
+0x001a1314 StartEventLuigiPrison__ctor
+0x001a154c VisibleSwitchMapParts__ctor
+0x001A1608 EnemyStateFindPlayer__ctor  # HIPOTESIS: Kuribo "[state]プレイヤー発見"; 2 llamadas
+0x001A4D68 PlayerLoadThread_toggleMarioLuigi  # HIPOTESIS: callback del hilo "プレイヤー読み込みスレッド"; invierte el flag Mario/Luigi y recarga con nombre "マリオ"/"ルイージ"
+0x001a5734 RollingReflectMapParts__ctor
+0x001A79B4 PlayerStateStatue__ctor  # HIPOTESIS: objeto 0x38, vtable 0x003D0894, anims WaitStatue/Transform, SePmTurnBackStatue (estatua tanuki)
+0x001A956C PlayerActionGraph_build  # HIPOTESIS: funcion gigante (~24 KB, pila 0x8B0) llamada desde PlayerCore__ctor; crea ~60 estados y ~170 transiciones
+0x001b64ac BridgePukupukuBreakBridge__ctor
+0x001B8B30 PlayerStateLuigiMove__ctor  # HIPOTESIS: objeto 0x5C, vtable 0x003D10A4, texto "LuigiMove"
+0x001BA528 PlayerStateSwimSurface__ctor  # HIPOTESIS: objeto 0x1C, vtable 0x003D13A8, anim SwimStandSurface
+0x001BAE80 PlayerStateSkyAttack__ctor  # HIPOTESIS: objeto 0x70, vtable 0x003D15AC, texto "スカイアタック[着地]" (ataque aereo, aterrizaje)
+0x001C0B40 LiveActorKit_init  # HIPOTESIS: crea ExecuteDirector (+4) y llama ExecuteDirector_init, y unos 12 directores mas
+0x001C2CC0 addHitSensor  # CONFIRMADO: (actor, nombre, tipo, maxCount) por cada entrada de "Sensor"
+0x001CA5E0 initLightCtrl  # HIPOTESIS: archivo "InitLight"
+0x001CABD0 NerveStateCtrl_startState  # HIPOTESIS: idem, recibe (ctrl, nuevoNerve)
+0x001CAC34 NerveStateCtrl_tryEndCurrentState  # HIPOTESIS: se llama en NerveKeeper_update al cambiar de nerve si hay ctrl de estados (+0x10)
+0x001cacac addNerveState  # agrega {state, nerve, nombre} (12 bytes) a la lista del keeper
+0x001CCA8C ExecuteDirector_init  # CONFIRMADO: tabla de update 0x3A8FA4 (58 entradas) + 10 tablas de dibujo ("３Ｄ（空）","２Ｄ（上画面）"...)
+0x001CDCB4 ActorExecuteInfo_addUpdater  # HIPOTESIS: suma el actor a la sublista y guarda la sublista en el ExecuteInfo
+0x001CDCF4 ActorExecuteInfo__ctor  # HIPOTESIS: 0x1C bytes en actor+0x18
+0x001DBF98 setNearClipDistance  # HIPOTESIS: se llama si Clipping trae "NearClipDistance"
+0x001DC888 ExecutorListFunctor__ctor  # CONFIRMADO: tipo "Functor"
+0x001DCF2C initExecutorDefault  # CONFIRMADO: igual que la anterior con categoria por defecto "敵" (enemigo)
+0x001DEA40 setHitSensorJoint  # HIPOTESIS: se llama si la entrada de sensor trae "Joint"
+0x001DEC60 initMaterialCode  # HIPOTESIS: se llama si existe "MaterialCode"
+0x001E1EF8 registerActorToDrawTable  # HIPOTESIS: idem para las tablas de dibujo (salta si categoria == "Movement")
+0x001E2128 ExecuteTableHolderDraw__ctor  # HIPOTESIS: 0x50 bytes, 10 instancias
+0x001E354C registerActorToUpdateTable  # HIPOTESIS: busca la lista de update cuyo nombre == categoria y llama ExecutorListActor_registerActor
+0x001E37D0 ExecuteTableHolderUpdate_init  # CONFIRMADO: crea un ejecutor por entrada segun tipo "ActorMovement"/"ActorCalcAnim"/"ActorMovementCalcAnim"/"LayoutUpdate"/"Execute"/"Functor"
+0x001E3B5C ExecuteTableHolderUpdate__ctor  # HIPOTESIS: 0x44 bytes, lo crea ExecuteDirector_init
+0x001E3BC0 ExecutorListLayoutUpdate__ctor  # CONFIRMADO: tipo "LayoutUpdate"
+0x001E43B4 ExecutorListActorCalcAnim__ctor  # CONFIRMADO: tipo "ActorCalcAnim"
+0x001E43CC ExecutorListActorMovement__ctor  # CONFIRMADO: tipo "ActorMovement"
+0x001E5A98 ExecutorListActor_registerActor  # CONFIRMADO: busca sublista por nombre del actor (+0x10) o la crea con vt+0x10 y la agrega
+0x001E7610 ExecutorListExecute__ctor  # CONFIRMADO: tipo "Execute"
+0x001E7F74 initModel  # CONFIRMADO: seccion "Model" (AnimArc, BlendAnimMax); escribe ModelKeeper en actor+0x28
+0x001E859C ExecutorListActorMovementCalcAnim__ctor  # CONFIRMADO: tipo "ActorMovementCalcAnim"
+0x001EBC50 LiveActor_receiveMsg  # CONFIRMADO: pos13, base devuelve 0; los sendMsg llaman host->vt+0x34(msg,sender,receiver)
+0x001EBC58 LiveActor_attackSensor  # CONFIRMADO: pos12, base vacia (bx lr); Kuribo_attackSensor(self,other) la sobrescribe
+0x001EBC5C initCollider  # CONFIRMADO: seccion "Collider" (Radius); escribe actor+0x20
+0x001EBCE4 LiveActor_updateCollider  # HIPOTESIS: pos21, llamada por movement (vt+0x54) tras control; trans += velocidad directo o via colisionador (+0x20)
+0x001EBD8C initNerve  # CONFIRMADO: (actor, nerveInicial, maxEstados) new 0x18 + NerveKeeper__ctor, guarda en actor+0x2C (lo lee getNerveKeeper); 266 llamadas
+0x001EBDD4 initEffectKeeper  # CONFIRMADO: seccion "Effect"/"Name"; escribe actor+0x34
+0x001EBE5C LiveActor_initAfterPlacement  # HIPOTESIS: pos2, base vacia; orden igual a Petari/SMO (init, initAfterPlacement, appear...)
+0x001EBF20 LiveActor_init  # CONFIRMADO: pos1, base vacia (bx lr); 219 de 220 clases la sobrescriben; Kuribo_init (pos1) llama initActorWithArchiveName
+0x001EBF24 LiveActor_control  # CONFIRMADO: pos19, base vacia, la llama movement por vt+0x4c tras el nerve; 83 clases la sobrescriben
+0x001EDE1C FSUSER_CreateFile  # CONFIRMADO: header 0x08080202, svc 0x32 en 0x1EDE8C, servicio fs:USER
+0x001EDEA0 FSUSER_DeleteFile  # CONFIRMADO: header 0x08040142, svc 0x32 en 0x1EDEDC, servicio fs:USER
+0x001EDEF0 FSUSER_GetFormatInfo  # CONFIRMADO: header 0x084500C2, svc 0x32 en 0x1EDF48, servicio fs:USER
+0x001EDF80 FSUSER_OpenDirectory  # CONFIRMADO: header 0x080B0102, svc 0x32 en 0x1EDFC4, servicio fs:USER
+0x001EDFE0 FSUSER_ControlArchive  # CONFIRMADO: header 0x080D0144, svc 0x32 en 0x1EE030, servicio fs:USER
+0x001EE044 FSUSER_FormatSaveData  # CONFIRMADO: header 0x084C0242, svc 0x32 en 0x1EE0A8, servicio fs:USER
+0x001EE0BC FSUSER_IsSdmcDetected  # CONFIRMADO: header 0x08170000, svc 0x32 en 0x1EE0D8, servicio fs:USER
+0x001EE0F8 FSUSER_IsSdmcWritable  # CONFIRMADO: header 0x08180000, svc 0x32 en 0x1EE114, servicio fs:USER
+0x001EE134 FSUSER_CreateDirectory  # CONFIRMADO: header 0x08090182, svc 0x32 en 0x1EE194, servicio fs:USER
+0x001EE1A8 FSUSER_DeleteDirectory  # CONFIRMADO: header 0x08060142, svc 0x32 en 0x1EE1E4, servicio fs:USER
+0x001EE1F8 FSUSER_GetArchiveResource  # CONFIRMADO: header 0x08490040, svc 0x32 en 0x1EE21C, servicio fs:USER
+0x001EE244 FSUSER_Cmd083F  # HIPOTESIS: header 0x083F00C0, svc 0x32 en 0x1EE278, servicio fs:USER
+0x001EE2A8 FSUSER_OpenFile  # CONFIRMADO: header 0x080201C2, svc 0x32 en 0x1EE324, servicio fs:USER
+0x001EE340 FSFILE_Read  # CONFIRMADO: header 0x080200C2, svc 0x32 en 0x1EE37C, servicio sesion de archivo FS
+0x001EE39C FSFILE_Close  # CONFIRMADO: header 0x08080000, svc 0x32 en 0x1EE3B4, servicio sesion de archivo FS
+0x001EE3C8 FSFILE_GetSize  # CONFIRMADO: header 0x08040000, svc 0x32 en 0x1EE3E4, servicio sesion de archivo FS
+0x001EE404 FSDIR_Read  # CONFIRMADO: header 0x08010042, svc 0x32 en 0x1EE438, servicio sesion de directorio FS
+0x001EE458 FSDIR_Close  # CONFIRMADO: header 0x08020000, svc 0x32 en 0x1EE470, servicio sesion de directorio FS
+0x001F1AB8 CECD_Initialize  # CONFIRMADO: GetServiceHandle("cecd:u" en 0x3A98A8) -> handle 0x3F036C
+0x001F1BB8 CECDU_ReadMessage  # CONFIRMADO: header 0x00030104, svc 0x32 en 0x1F1C10, servicio cecd:u (handle 0x3F036C)
+0x001F1C38 CECDU_GetCecdState  # CONFIRMADO: header 0x000E0000, svc 0x32 en 0x1F1C58, servicio cecd:u (handle 0x3F036C)
+0x001F1C78 CECDU_WriteMessageWithHMAC  # CONFIRMADO: header 0x00070106, svc 0x32 en 0x1F1CE0, servicio cecd:u (handle 0x3F036C)
+0x001F1D00 CECDU_GetChangeStateEventHandle  # CONFIRMADO: header 0x00100000, svc 0x32 en 0x1F1D20, servicio cecd:u (handle 0x3F036C)
+0x001F1D3C CECDU_Open  # CONFIRMADO: header 0x000100C2, svc 0x32 en 0x1F1D68, servicio cecd:u (handle 0x3F036C)
+0x001F1D8C CECDU_Read  # CONFIRMADO: header 0x00020042, svc 0x32 en 0x1F1DB8, servicio cecd:u (handle 0x3F036C)
+0x001F1DDC CECDU_Stop  # CONFIRMADO: header 0x000C0040, svc 0x32 en 0x1F1DFC, servicio cecd:u (handle 0x3F036C)
+0x001F1E14 CECDU_Start  # CONFIRMADO: header 0x000B0040, svc 0x32 en 0x1F1E34, servicio cecd:u (handle 0x3F036C)
+0x001F1E4C CECDU_Write  # CONFIRMADO: header 0x00050042, svc 0x32 en 0x1F1E7C, servicio cecd:u (handle 0x3F036C)
+0x001F1E94 CECDU_Delete  # CONFIRMADO: header 0x00080102, svc 0x32 en 0x1F1ED4, servicio cecd:u (handle 0x3F036C)
+0x001F1EF0 CECDU_SetData  # CONFIRMADO: header 0x000900C2, svc 0x32 en 0x1F1F1C, servicio cecd:u (handle 0x3F036C)
+0x001F1F34 CECDU_ReadData  # CONFIRMADO: header 0x000A00C4, svc 0x32 en 0x1F1F74, servicio cecd:u (handle 0x3F036C)
+0x001F205C CECD2_ReadMessage  # HIPOTESIS: header 0x00030104, svc 0x32 en 0x1F20B4, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F20DC CECD2_GetCecdState  # HIPOTESIS: header 0x000E0000, svc 0x32 en 0x1F20FC, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F211C CECD2_WriteMessageWithHMAC  # HIPOTESIS: header 0x00070106, svc 0x32 en 0x1F2184, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F21A4 CECD2_GetChangeStateEventHandle  # HIPOTESIS: header 0x00100000, svc 0x32 en 0x1F21C4, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F21E0 CECD2_Open  # HIPOTESIS: header 0x000100C2, svc 0x32 en 0x1F220C, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F2230 CECD2_Read  # HIPOTESIS: header 0x00020042, svc 0x32 en 0x1F225C, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F2280 CECD2_Stop  # HIPOTESIS: header 0x000C0040, svc 0x32 en 0x1F22A0, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F22B8 CECD2_Start  # HIPOTESIS: header 0x000B0040, svc 0x32 en 0x1F22D8, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F22F0 CECD2_Write  # HIPOTESIS: header 0x00050042, svc 0x32 en 0x1F2320, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F2338 CECD2_Delete  # HIPOTESIS: header 0x00080102, svc 0x32 en 0x1F2378, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F2394 CECD2_SetData  # HIPOTESIS: header 0x000900C2, svc 0x32 en 0x1F23C0, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F23D8 CECD2_ReadData  # HIPOTESIS: header 0x000A00C4, svc 0x32 en 0x1F2418, servicio cecd 2a sesion (handle 0x3F0370)
+0x001F2A28 CFGU_GenHashConsoleUnique  # CONFIRMADO: header 0x00030040, svc 0x32 en 0x1F2A4C, servicio cfg:u
+0x001F2A70 CFGU_SecureInfoGetRegion  # CONFIRMADO: header 0x00020000, svc 0x32 en 0x1F2A90, servicio cfg:u
+0x001F2BD0 DSP_Initialize  # CONFIRMADO: GetServiceHandle("dsp::DSP" en 0x3A2770) -> handle 0x3E2674
+0x001F2F7C DSP_SetSemaphore  # CONFIRMADO: header 0x00070040, svc 0x32 en 0x1F2F9C, servicio dsp::DSP
+0x001F2FB4 DSP_FlushDataCache  # CONFIRMADO: header 0x00130082, svc 0x32 en 0x1F2FD8, servicio dsp::DSP
+0x001F2FEC DSP_RecvDataIsReady  # CONFIRMADO: header 0x00020040, svc 0x32 en 0x1F3010, servicio dsp::DSP
+0x001F3034 DSP_SetSemaphoreMask  # CONFIRMADO: header 0x00170040, svc 0x32 en 0x1F3054, servicio dsp::DSP
+0x001F306C DSP_WriteProcessPipe  # CONFIRMADO: header 0x000D0082, svc 0x32 en 0x1F309C, servicio dsp::DSP
+0x001F30B0 DSP_GetHeadphoneStatus  # CONFIRMADO: header 0x001F0000, svc 0x32 en 0x1F30CC, servicio dsp::DSP
+0x001F30E8 DSP_ReadPipeIfPossible  # CONFIRMADO: header 0x001000C0, svc 0x32 en 0x1F3134, servicio dsp::DSP
+0x001F3158 DSP_InvalidateDataCache  # CONFIRMADO: header 0x00140082, svc 0x32 en 0x1F317C, servicio dsp::DSP
+0x001F3190 DSP_GetSemaphoreEventHandle  # CONFIRMADO: header 0x00160000, svc 0x32 en 0x1F31AC, servicio dsp::DSP
+0x001F31C4 DSP_RegisterInterruptEvents  # CONFIRMADO: header 0x00150082, svc 0x32 en 0x1F31E8, servicio dsp::DSP
+0x001F31FC DSP_ConvertProcessAddressFromDspDram  # CONFIRMADO: header 0x000C0040, svc 0x32 en 0x1F321C, servicio dsp::DSP
+0x001F323C DSP_RecvData  # CONFIRMADO: header 0x00010040, svc 0x32 en 0x1F3260, servicio dsp::DSP
+0x001F3AC4 HID_Initialize  # CONFIRMADO: GetServiceHandle(hid:USER) -> handle 0x3F0374, HIDUSER_GetIPCHandles, mapea memoria compartida de 0x2B0
+0x001F5124 HIDUSER_GetIPCHandles  # CONFIRMADO: header 0x000A0000, svc 0x32 en 0x1F5158, servicio hid:USER
+0x001F51A0 HIDUSER_EnableGyroscope  # CONFIRMADO: header 0x00130000, svc 0x32 en 0x1F51BC, servicio hid:USER
+0x001F51D0 HIDUSER_DisableGyroscope  # CONFIRMADO: header 0x00140000, svc 0x32 en 0x1F51EC, servicio hid:USER
+0x001F5200 HIDUSER_EnableAccelerometer  # CONFIRMADO: header 0x00110000, svc 0x32 en 0x1F521C, servicio hid:USER
+0x001F5230 HIDUSER_DisableAccelerometer  # CONFIRMADO: header 0x00120000, svc 0x32 en 0x1F524C, servicio hid:USER
+0x001F5260 HIDUSER_GetGyroscopeCalibrateParam  # CONFIRMADO: header 0x00160000, svc 0x32 en 0x1F5280, servicio hid:USER
+0x001F52A8 HIDUSER_GetGyroscopeRawToDpsCoefficient  # CONFIRMADO: header 0x00150000, svc 0x32 en 0x1F52C8, servicio hid:USER
+0x001F57A8 MIC_Initialize  # CONFIRMADO: GetServiceHandle(mic:u, flags=1) -> handle 0x3F0378
+0x001F5B30 MICU_UnmapSharedMem  # CONFIRMADO: header 0x00020000, svc 0x32 en 0x1F5B4C, servicio mic:u
+0x001F5B60 MICU_IsSampling  # CONFIRMADO: header 0x00060000, svc 0x32 en 0x1F5B80, servicio mic:u
+0x001F5BA4 MICU_SetPower  # CONFIRMADO: header 0x000A0040, svc 0x32 en 0x1F5BC8, servicio mic:u
+0x001F5BE4 MICU_StopSampling  # CONFIRMADO: header 0x00050000, svc 0x32 en 0x1F5C00, servicio mic:u
+0x001F5C14 MICU_StartSampling  # CONFIRMADO: header 0x00030140, svc 0x32 en 0x1F5C4C, servicio mic:u
+0x001F5C68 MICU_MapSharedMem  # CONFIRMADO: header 0x00010042, svc 0x32 en 0x1F5C90, servicio mic:u
+0x001F5CA8 MICU_SetIirFilter  # CONFIRMADO: header 0x000C0042, svc 0x32 en 0x1F5CD8, servicio mic:u
+0x001F5CF4 MICU_GetGain  # CONFIRMADO: header 0x00090000, svc 0x32 en 0x1F5D14, servicio mic:u
+0x001F5D38 MICU_SetGain  # CONFIRMADO: header 0x00080040, svc 0x32 en 0x1F5D5C, servicio mic:u
+0x001F5D78 MICU_SetClamp  # CONFIRMADO: header 0x000D0040, svc 0x32 en 0x1F5D9C, servicio mic:u
+0x001F5ECC NDMU_ResumeDaemons  # CONFIRMADO: header 0x00070040, svc 0x32 en 0x1F5EEC, servicio ndm:u
+0x001F5F08 NDMU_ResumeScheduler  # CONFIRMADO: header 0x00090000, svc 0x32 en 0x1F5F24, servicio ndm:u
+0x001FB504 SRV_Unsubscribe  # CONFIRMADO: header 0x000A0040, svc 0x32 en 0x1FB524, servicio srv:
+0x001FB53C SRV_Subscribe  # CONFIRMADO: header 0x00090040, svc 0x32 en 0x1FB55C, servicio srv:
+0x00221CF8 nn_os_Mutex_Unlock  # HIPOTESIS: svc 0x14 ReleaseMutex sobre el handle en [r0+0x10]
+0x00232AE0 APT_GetAppletManInfo  # CONFIRMADO: header 0x00050040, svc 0x32 en 0x232B14, servicio APT:U
+0x0023D7DC FSFILE_Write  # CONFIRMADO: header 0x08030102, svc 0x32 en 0x23D838, servicio sesion de archivo FS
+0x0023E3CC FSUSER_CloseArchive  # CONFIRMADO: header 0x080E0080, svc 0x32 en 0x23E3E4, servicio fs:USER
+0x0023E420 FSUSER_OpenArchive  # CONFIRMADO: header 0x080C00C2, svc 0x32 en 0x23E460, servicio fs:USER
+0x002417e0 initActor  # HIPOTESIS: carga del archivo del actor y su configuracion
+0x00243258 getActorArchive  # HIPOTESIS: primer paso de initActor con la ruta "ObjectData/%s"
+0x0024B160 ExecuteTableHolderDraw_init  # HIPOTESIS: (tabla, nombre, entradas, n)
+0x0024B930 ActorExecuteInfo_validateUpdaters  # HIPOTESIS: mueve el actor de la lista inactiva a la activa (makeActorAlive/endClipped)
+0x0024F8C4 initCollisionParts  # HIPOTESIS: seccion "Collision" (Name, Sensor, Joint)
+0x00250608 NerveKeeper__ctor  # CONFIRMADO: llamado por initNerve con (mem, actor, nerve, max)
+0x00250654 NerveKeeper_update  # CONFIRMADO: aplica nerve pendiente (+8 -> +4, step +0xC=0), llama nerve->execute (vt0), step++; lo llama movement con actor+0x2C
+0x00250F74 ActorExecuteInfo_validateDrawers  # HIPOTESIS: igual para dibujo (si ExecuteInfo+0x18 != 0)
+0x00250F8C ActorExecuteInfo_invalidateDrawers  # HIPOTESIS: inverso
+0x00250FA4 makeInitFileName  # HIPOTESIS: arma "InitActor"/"InitSensor"/"InitClipping" (+sufijo) en un buffer
+0x00252000 PlayerActionCondList_add  # CONFIRMADO: agrega una condicion a una lista AND/OR (antes PlayerActionNode_addTransition)
+0x0025204C PlayerActionCondAnd__ctor  # CONFIRMADO: evaluar 0x001B8B74 = AND de todos (sin cortocircuito); antes llamado PlayerActionCondList__ctor
+0x00252134 PlayerActionNode__ctor  # HIPOTESIS: nodo 0x14 que envuelve cada estado (60 llamadas en el builder), lista enlazada propia
+0x00252AFC ActorExecuteInfo_invalidateUpdaters  # HIPOTESIS: inverso (makeActorDead/startClipped)
+0x00255d94 DemoStarter__ctor
+0x00258108 SceneActorKit_updateAll  # HIPOTESIS: actualizacion completa por frame: pre, executeAll (0x336154), post, y dos objetos de +0x58/+0x5C (vt0)
+0x00259360 EnemyStateChase__ctor  # HIPOTESIS: Kuribo "[state]追いかけ"; 6 llamadas
+0x0025a930 KoopaSwitch__ctor
+0x0025AA2C LiveActor_calcAnim  # CONFIRMADO: pos8, lo llama ExecutorActorCalcAnim (vt+0x20); mismo guardia vivo/clipping; actualiza keeper +0x38
+0x0025AF54 getPlayerFileIconModelName  # HIPOTESIS: devuelve "Mario"/"MarioGolden"/"Luigi"/"LuigiGolden" (dorado si contador==100); unico llamador 0x0017E02C
+0x0025c138 BombHei__ctor
+0x0025f2f0 KillerMagnum__ctor
+0x0025f32c Killer__ctor
+0x002605F8 getPlayerModelArchiveTable  # CONFIRMADO: devuelve 0x003B94C4 (ObjectData/Mario...) o 0x003B9534 (ObjectData/Luigi...) segun isPlayerLuigi
+0x00260618 getPlayerCharacterData  # HIPOTESIS: devuelve 0x0042F2C0 (Luigi) o 0x003F1C80 (Mario), tercer campo de la tabla de recursos
+0x00260638 getPlayerAnimTableNormal  # CONFIRMADO: devuelve 0x003B95A4 (ObjectData/MarioAnimation, Player:Normal, Player:Mini)
+0x0026279C initExecutorWithCategory  # CONFIRMADO: seccion "Executor"/"CategoryName"; crea ActorExecuteInfo en +0x18 y registra en tablas de update y draw
+0x002640A0 initStageSwitchWriteB  # CONFIRMADO: Switch/"UseWriteB"
+0x002640F4 initStageSwitchWriteA  # CONFIRMADO: Switch/"UseWriteA"
+0x00264178 Kuribo__ctor
+0x002660f0 BlockEmpty__ctor
+0x00267308 NeedleBar__ctor
+0x002690E4 isExistArchiveFile  # HIPOTESIS: (archivo, "%s.byml") decide si leer el byml
+0x0026ab7c Gorori__ctor
+0x0026B9D0 EnemyStateWander__ctor  # HIPOTESIS: Kuribo lo registra como "[state]徘徊"; 7 llamadas (compartido)
+0x0026c288 KuriboTailSearch__ctor
+0x0026c2dc KuriboTail__ctor
+0x0026d950 Teresa__ctor
+0x0026DA4C initShadow  # CONFIRMADO: archivo "InitShadow"; escribe actor+0x44
+0x0026DB44 getPadLeftStick  # HIPOTESIS: (puerto 0) devuelve puntero a vec2 del stick, usado como entrada en PlayerInput_update
+0x0026DF3C LiveActor_movement  # CONFIRMADO: pos7, si vivo y (no clippeado o +0x57): NerveKeeper_update, control() vt+0x4c, updateCollider vt+0x54; lo llama ExecutorActorMovement (vt+0x1c)
+0x0026E644 initHitSensorKeeper  # CONFIRMADO: (actor, n) escribe actor+0x30, n = tamano de la lista "Sensor"
+0x0026EDD4 initStageSwitchReadB  # CONFIRMADO: Switch/"UseReadB"
+0x0026F564 initGroupClipping  # CONFIRMADO: seccion "GroupClipping"
+0x0026FC5C initStageSwitchDeadOn  # CONFIRMADO: Switch/"UseDeadOn"
+0x00270620 isSensorMapObj  # CONFIRMADO: sensor+4 == 10
+0x0027071C initStageSwitchKill  # CONFIRMADO: Switch/"UseKill"
+0x00270AA8 initActorPlacement  # HIPOTESIS: primera llamada de initActor tras leer el byml (actor, info)
+0x00271208 getByamlBoolOrFalse  # HIPOTESIS: claves "UseAppear","UseKill"... devuelve bool directo
+0x002714F8 receiveMsgPushAndAddVelocity  # HIPOTESIS: si msg==0x29 calcula direccion entre sensores y suma velocidad
+0x00272C6C sendMsgPushAndKillVelocityToTarget  # HIPOTESIS: envia 0x29 y, si se acepta, quita la componente de velocidad hacia el otro sensor
+0x00272DB8 getVelocityPtr  # HIPOTESIS: version escribible de la anterior
+0x00272DD0 getVelocity  # HIPOTESIS: usado como vector velocidad en updateCollider y push
+0x0027687C PlayerResourceTable_make  # CONFIRMADO: arma {tablaModelos(0x002605F8), tablaAnim(0x00260638), 0x00260618} que recibe initPlayer
+0x002768A4 PlayerActor__ctor  # CONFIRMADO: llama GameActor__ctor con nombre "プレイヤー" (Jugador), pone vtable 0x003C6828 (+8 vtables secundarias), llamado tras operator_new(0x15C) en 4 escenas
+0x00277248 getSceneSingletonField54  # HIPOTESIS: getter trivial; Ghidra lo marco noreturn por error
+0x00277258 SceneActorKit_updateDemoLists  # HIPOTESIS: actualizacion parcial (clipping, cielo, demo, jugador, niebla, efectos) para demos/pausa
+0x00277CE4 isPlayerLuigi  # CONFIRMADO: !=0 selecciona tablas de Luigi en 0x002605F8/0x00260618; lee flag +0x10 de la partida
+0x00278C28 tryGetByamlF32  # CONFIRMADO: claves "Radius","Offset","HeightScale","NearClipDistance"
+0x002795B8 LiveActor_startClipped  # CONFIRMADO: pos10, pone +0x55 (clippeado)=1, oculta modelo, invalida sensores/efectos, propaga vt+0x28 a subactores
+0x002797EC LiveActor_endClipped  # CONFIRMADO: pos11, +0x55=0, inverso de startClipped, propaga vt+0x2c
+0x00279BC4 sendMsgEnemyAttack  # HIPOTESIS: envia msg 0x2D si FUN_0023F970 lo permite; si se acepta Kuribo pasa a "[state]攻撃"
+0x0027A198 setColliderFilterSpecialPurpose  # HIPOTESIS: crea filtro {vtable, nombre} en colisionador(+0x20)+4; Kuribo pasa "移動制限" (limite de movimiento)
+0x0027A4D0 isSensorEnemyAttack  # CONFIRMADO: sensor+4 == 6
+0x0027A500 isSensorEnemy  # CONFIRMADO: sensor+4 en {4,5,6,7,8} (Enemy, EnemyBody, EnemyAttack, KillerMagnum, Dossun)
+0x0027A530 tryReceiveMsgPressDownAndSetNerve  # HIPOTESIS: si FUN_0027DB44()/FUN_0027B178(msg) -> FUN_0027D758 y setNerve(actor,nerve); Kuribo lo usa con nerve 0x3F21E4 y luego invalidateClipping
+0x0027A5F4 isLessEqualStep  # HIPOTESIS: devuelve getNerveKeeper()->step(+0xC) <= n
+0x0027a908 SuperLeafSpecial__ctor
+0x0027a944 SuperLeaf__ctor
+0x0027a988 KinokoSuper__ctor
+0x0027aa2c CoinCollect__ctor
+0x0027aba8 FireFlower__ctor
+0x0027abec KickKoura__ctor
+0x0027B0F8 isSensorPlayer  # CONFIRMADO: sensor+4 == 1 (Player) o 15 (PlayerFireBall)
+0x0027B544 EnemyStateBlowDown__ctor  # HIPOTESIS: Kuribo "[state]吹っ飛び"; 42 llamadas (estado generico de enemigo)
+0x0027B760 EnemyStateBlowDown_tryReceiveMsg  # HIPOTESIS: prueba 9 predicados de mensaje, guarda el msg en state+0x24 y hace setNerve(host(state+0xC), nerve); 28 llamadas
+0x0027CB40 addVec3  # HIPOTESIS: (out, a, b)
+0x0027CB5C subVec3  # HIPOTESIS: (out, a, b), usado con posiciones de sensores (+8)
+0x0027D248 LiveActor_makeActorDead  # CONFIRMADO: pos6, flag muerto=1, invalida sensores/colisionador, saca de listas de ejecucion, propaga vt+0x18 a subactores
+0x0027D540 sendMsgPush  # HIPOTESIS(nombre): envia msg 0x29 a host(sensor+0x28)->receiveMsg(vt+0x34); Kuribo la usa para empujar; 39 llamadas
+0x0027D5BC isNearZeroVec3  # HIPOTESIS: si el vector es casi cero se usa uno por defecto
+0x0027e014 ObjectChildArea__ctor
+0x0027E060 tryGetByamlS32  # CONFIRMADO: claves "BlendAnimMax","MaxCount"
+0x0027EA38 LiveActor_makeActorAlive  # CONFIRMADO: pos4, pone flag muerto (+0x54)=0, valida sensores, mete el actor en las listas de ejecucion (0x24B930/0x250F74) y propaga vt+0x10 a subactores
+0x0027EBE8 LiveActor_kill  # CONFIRMADO: pos5, solo hace tail-call a vt+0x18 (pos6 makeActorDead)
+0x0027F3BC getTransPtr  # HIPOTESIS: destino de trans += velocidad en updateCollider
+0x0027FAB0 trySyncStageSwitchAppear  # HIPOTESIS: escucha el switch con dos functores; si hay switch makeActorDead y devuelve 1, si no makeActorAlive y 0; 53 llamadas
+0x0027FCB4 initStageSwitchReadA  # CONFIRMADO: Switch/"UseReadA"
+0x0027fe94 LiveActor__ctor
+0x0027FF68 LiveActor_appear  # CONFIRMADO: pos3, solo hace tail-call a vt+0x10 (pos4 makeActorAlive)
+0x002801d8 initActorWithArchiveName  # arma "ObjectData/%s" y llama a initActor
+0x00280284 getTrans  # HIPOTESIS: devuelve PoseKeeper(+0x14)+4
+0x00280420 GameActor__ctor
+0x00280530 initStageSwitchAppear  # CONFIRMADO: seccion Switch/"UseAppear"
+0x00280608 setNerve  # cierra el estado actual, guarda nerve en keeper+8, step=-1 en keeper+0xC
+0x00280654 invalidateClipping  # CONFIRMADO: initActor la llama si Clipping/"Invalidate"; pone +0x56=1, termina clipping y saca al actor de las listas del director de clipping; 142 llamadas
+0x002806a0 isNerve  # compara el nerve actual con el argumento
+0x00289458 gspGetGxContext  # HIPOTESIS: devuelve la base del contexto GSP; la cola de comandos esta en +0x58
+0x00289464 gspSubmitGxCommand  # CONFIRMADO: copia 8 palabras en la cola (15 entradas x 0x20, cabecera de 0x20), DSB, incrementa contador con ldrex/strex y si la cola estaba vacia llama GSPGPU_TriggerCmdReqQueue
+0x0028A8D4 DSP_UnloadComponent  # CONFIRMADO: header 0x00120000, svc 0x32 en 0x28A8EC, servicio dsp::DSP
+0x0028B63C svcGetThreadId  # CONFIRMADO: wrapper fino, svc 0x37
+0x0028B7E8 svcGetSystemTick_ToPtr  # CONFIRMADO: push r4 ; mov r4,r0 ; svc 0x28 ; strd r0,[r4] (las otras 21 estan inline)
+0x0028B930 SvcX3E3190_Cmd13_SetU8  # HIPOTESIS: header 0x00130040, svc 0x32 en 0x28B954, servicio desconocido (handle 0x3E3190)
+0x0028B96C SvcX3E3190_Cmd3D_SetU8  # HIPOTESIS: header 0x003D0040, svc 0x32 en 0x28B990, servicio desconocido (handle 0x3E3190)
+0x0028BBBC svcGetProcessId  # CONFIRMADO: wrapper fino, svc 0x35
+0x0028BBD4 DSP_LoadComponent  # CONFIRMADO: header 0x001100C2, svc 0x32 en 0x28BC14, servicio dsp::DSP
+0x0028BC38 svcSleepThread_Yield  # CONFIRMADO: mov r0,#0 ; mov r1,r0 ; svc 0x0A (SleepThread(0) = ceder CPU)
+0x0028BC4C ERRF_ThrowFatal  # HIPOTESIS: arma la estructura de error, ConnectToPort(err:f) y llama ERRF_ThrowFatalError 0x107740
+0x0028BC7C svcArbitrateAddress  # CONFIRMADO: svc 0x22 + bx lr (las otras 46 ArbitrateAddress estan inline sobre el handle global 0x3E25C4)
+0x0028C638 nngx_RunCmdlistRequests  # CONFIRMADO: recorre las peticiones (0x1C bytes c/u) de la command list activa y despacha tipos 0-4 a los GX_*; para en la marcada como ultima
+0x0028CA0C thunk_GSPGPU_WriteHWRegs  # CONFIRMADO: salto incondicional a 0x1099B0
+0x0028DC38 svcConnectToPort  # CONFIRMADO: wrapper fino, svc 0x2D; usado por srvInit ("srv:") y por el lanzador de err:f
+0x0028E124 FSUSER_OpenFileDirectly  # CONFIRMADO: header 0x08030204, svc 0x32 en 0x28E1B4, servicio fs:USER
+0x0028e348 snprintf
+0x0028e680 getSceneSingleton  # HIPOTESIS: devuelve el global DAT_003e23c4
+0x0028E98C APT_IsRegistered  # CONFIRMADO: header 0x00090040, svc 0x32 en 0x28E9B0, servicio APT:U
+0x0028EBA0 svcWaitSynchronizationN  # CONFIRMADO: wrapper fino, svc 0x25 (no hay svc 0x24 en todo el binario)
+0x0028EBC8 NDMU_SuspendDaemons  # CONFIRMADO: header 0x00060040, svc 0x32 en 0x28EBE8, servicio ndm:u
+0x0028EC88 svcBreak  # CONFIRMADO: svc 0x3C + bx lr; se llama tras cada error fatal de inicializacion
+0x0028ECF8 nngxGetCmdlistParameteri  # HIPOTESIS: switch sobre 0x200+N (constantes NN_GX_CMDLIST_*) leyendo campos de la command list
+0x002905E8 ByamlIter__ctor  # HIPOTESIS: construye iterador sobre datos byml
+0x00290638 getArchiveFileData  # HIPOTESIS: (archivo, nombre) -> datos byml
+0x00290F58 tryGetByamlBool  # CONFIRMADO: clave "Invalidate" de Clipping
+0x00290FA8 tryGetByamlIterByKey  # CONFIRMADO: claves "Model","MaterialController","Executor","Collision","Collider","Effect","Switch","GroupClipping"
+0x00291014 tryGetByamlString  # CONFIRMADO: claves "AnimArc","CategoryName","Name","Joint","SoundSourceName"
+0x00291074 tryGetByamlIterByIndex  # HIPOTESIS: recorre la lista "Sensor" por indice
+0x002910E0 ByamlIter__ctorEmpty  # HIPOTESIS: iterador vacio antes de cada tryGetIterByKey
+0x002910F0 getByamlSize  # HIPOTESIS: numero de sensores de la lista "Sensor"
+0x00291968 svcCreateEvent  # CONFIRMADO: wrapper fino, svc 0x17
+0x00291A68 APT_OpenSession  # CONFIRMADO: GetServiceHandle(APT:U) -> handle 0x3E2668
+0x00291F78 NDMU_Initialize  # CONFIRMADO: GetServiceHandle("ndm:u" en 0x3A200C) -> handle 0x3E259C
+0x00292114 SRV_GetServiceHandle  # CONFIRMADO: entrada 0x292114 que salta al bloque 0x105798; header 0x00050100 + nombre 8 bytes + largo; 9 llamadores abren servicios
+0x00292150 strlen_ServiceName  # HIPOTESIS: devuelve el largo del nombre que se pasa a GetServiceHandle
+0x002921B4 nn_Result_ReportFatal  # HIPOTESIS: (result, archivo, linea) antes de svcBreak en todos los Initialize
+0x00292300 isEqualString  # CONFIRMADO: comparacion de cadenas usada con "CoinCollect", tabla de tipos de sensor, nombres de ejecutor
+0x00292EFC srvInit  # CONFIRMADO: ConnectToPort("srv:") + SRV_RegisterClient (0x102AF8), con contador de referencias
+0x0029304C svcControlMemory  # CONFIRMADO: wrapper fino, svc 0x01 en 0x293058
+0x002932a8 operator_new
+0x0029360C svcExitProcess  # CONFIRMADO: svc 0x03 + bx lr (0x293608 es un nop de relleno)
+0x00296190 GSPGPU_FlushDataCache  # CONFIRMADO: header 0x00080082, svc 0x32 en 0x2961B4, servicio gsp::Gpu
+0x002961C8 GSPGPU_SaveVramSysArea  # CONFIRMADO: header 0x00190000, svc 0x32 en 0x2961E0, servicio gsp::Gpu
+0x002961F0 GSPGPU_SetLcdForceBlack  # CONFIRMADO: header 0x000B0040, svc 0x32 en 0x296210, servicio gsp::Gpu
+0x00296228 GSPGPU_SetInternalPriorities  # CONFIRMADO: header 0x001E0080, svc 0x32 en 0x296264, servicio gsp::Gpu
+0x00296278 GSPGPU_ImportDisplayCaptureInfo  # CONFIRMADO: header 0x00180000, svc 0x32 en 0x296294, servicio gsp::Gpu
+0x00296E38 APT_GetAppletInfo  # CONFIRMADO: header 0x00060040, svc 0x32 en 0x296E68, servicio APT:U
+0x00296EAC APT_JumpToHomeMenu  # CONFIRMADO: header 0x002C0044, svc 0x32 en 0x296EE4, servicio APT:U
+0x00296EFC APT_StartSystemApplet  # CONFIRMADO: header 0x001F0084, svc 0x32 en 0x296F30, servicio APT:U
+0x00296F48 APT_StartLibraryApplet  # CONFIRMADO: header 0x001E0084, svc 0x32 en 0x296F7C, servicio APT:U
+0x00296F94 APT_PreloadLibraryApplet  # CONFIRMADO: header 0x00160040, svc 0x32 en 0x296FB4, servicio APT:U
+0x00296FCC APT_SendCaptureBufferInfo  # CONFIRMADO: header 0x00400042, svc 0x32 en 0x297000, servicio APT:U
+0x0029701C APT_PrepareToJumpToHomeMenu  # CONFIRMADO: header 0x002B0000, svc 0x32 en 0x297038, servicio APT:U
+0x0029704C APT_PrepareToStartSystemApplet  # CONFIRMADO: header 0x00190040, svc 0x32 en 0x29706C, servicio APT:U
+0x00297084 APT_PrepareToStartLibraryApplet  # CONFIRMADO: header 0x00180040, svc 0x32 en 0x2970A4, servicio APT:U
+0x002970BC APT_Wrap  # CONFIRMADO: header 0x00460104, svc 0x32 en 0x297108, servicio APT:U
+0x00297120 APT_Unwrap  # CONFIRMADO: header 0x00470104, svc 0x32 en 0x29716C, servicio APT:U
+0x002CF754 isExistLinkCoinCollect  # HIPOTESIS(nombre): recorre los links del placement buscando "CoinCollect"
+0x002d4750 Bug__ctor
+0x002d4f90 Poo__ctor
+0x002d61c8 Bird__ctor
+0x002d6df8 Indy__ctor
+0x002d84d0 Pole__ctor
+0x002d94f8 Rope__ctor
+0x002f62f8 Dokan__ctor
+0x002f71f8 Gesso__ctor
+0x002f7aa0 Grass__ctor
+0x002f81b0 Karon__ctor
+0x002f84ac Koopa__ctor
+0x002f8998 Luigi__ctor
+0x002f8d24 Peach__ctor
+0x002f92bc Plant__ctor
+0x002f9ed4 TreeA__ctor
+0x00303504 Bubble__ctor
+0x00303e6c Bunbun__ctor
+0x00304360 Burner__ctor
+0x00304890 Dossun__ctor
+0x00306c84 Hoppun__ctor
+0x003074e0 Kameck__ctor
+0x003080f4 Kuribo_receiveMsg  # vtable pos 13; devuelve bool
+0x0030820c Kuribo_attackSensor  # vtable pos 12
+0x0030833c Kuribo_init  # vtable pos 1; 7 estados: 攻撃 徘徊 追いかけ 落下 プレイヤー発見 飛び出し 吹っ飛び
+0x00308a18 Picket__ctor
+0x00308FB4 PlayerCore_setSensorCtrl  # HIPOTESIS: escribe (core+0x80)+0x18
+0x00308FD0 PlayerCore_update  # HIPOTESIS: llamado desde movement; despacha via core+0x18 segun forma (core+0x40)
+0x00309334 PlayerCore__ctor  # HIPOTESIS(nombre): objeto 0xF8 en jugador+0x74 creado en initPlayer; arma ~40 subcomponentes y llama al constructor del grafo de acciones
+0x00309ddc Punpun__ctor
+0x0030b858 Togezo__ctor
+0x0030c3d4 Utsubo__ctor
+0x0030d78c Wanwan__ctor
+0x0030dc1c WooGan__ctor
+0x0030f4c0 Choropu__ctor
+0x0030ffb8 CoinBox__ctor
+0x00311258 Kabehei__ctor
+0x00311ce8 Kinopio__ctor
+0x00312538 Meragon__ctor
+0x00312de8 NutLift__ctor
+0x003133e8 PeraObj__ctor
+0x0031357c Seagull__ctor
+0x003140e8 Sokuten__ctor
+0x003143b0 Trilift__ctor
+0x00314770 WoodBox__ctor
+0x00314a38 Chorobon__ctor
+0x00314d4c CoinRing__ctor
+0x003156d8 Garigari__ctor
+0x003165cc Nokonoko__ctor
+0x0031674c PatanBox__ctor
+0x003184ec Pukupuku__ctor
+0x003193f4 WarpCube__ctor
+0x00319ad4 WarpDoor__ctor
+0x00319d70 WarpLift__ctor
+0x0031a44c BeatBlock__ctor
+0x0031a618 BlockHelp__ctor
+0x0031a818 BlockNote__ctor
+0x0031AFC8 DemoScene_init  # HIPOTESIS: crea PlayerActor + "CinemaFrame"/"WipeFadeBlackD"
+0x0031b564 EffectObj__ctor
+0x0031b6a0 FallStone__ctor
+0x0031c280 GrassMike__ctor
+0x0031f00c KoopaDoor__ctor
+0x00320a58 PackunInk__ctor
+0x00321e84 SamboBody__ctor
+0x003231dc SamboHead__ctor
+0x00323bc8 SuperStar__ctor
+0x00323f6c SwingLift__ctor
+0x00324fec Telescope__ctor
+0x00325afc TogeMetbo__ctor
+0x0033290C executeUpdateList  # CONFIRMADO: (kit, nombreLista) pre/ejecuta por nombre/post; 55 llamadas con "クリッピング","デモ","プレイヤー[Movement]","エフェクト"...
+0x003329C4 executeDrawList  # HIPOTESIS: (kit, nombreTabla, nombreLista) recorre tablas de dibujo por nombre
+0x00335414 ExecutorActorCalcAnim_execute  # CONFIRMADO: for i<n: actor->calcAnim() (vt+0x20)
+0x00335454 ExecutorActorMovement_execute  # CONFIRMADO: for i<n: actor->movement() (vt+0x1C)
+0x003360F0 ExecuteTableHolderUpdate_executeListByName  # CONFIRMADO: igual pero solo las listas cuyo nombre coincide
+0x00336154 ExecuteTableHolderUpdate_executeAll  # HIPOTESIS: recorre todos los ejecutores llamando vt+8 (executeList); lo llama 0x258108
+0x00336290 ExecutorListActorCalcAnim_createSubList  # CONFIRMADO: vt+0x10, sublista con vtable 0x3D703C (execute = 0x335414)
+0x003362B8 ExecutorListActorMovement_createSubList  # CONFIRMADO: vt+0x10, crea sublista con vtable 0x3D7048 (execute = 0x335454)
+0x00336684 ExecutorListActor_executeList  # CONFIRMADO: vt+8 de los 3 ExecutorListActor*; recorre sublistas (+0xC n, +0x10 arreglo) y llama vt0
+0x003368C0 ExecutorActorMovementCalcAnim_execute  # CONFIRMADO: for i<n: actor->movement(); actor->calcAnim()
+0x00336B3C ExecutorListActorMovementCalcAnim_createSubList  # CONFIRMADO: vt+0x10, sublista con vtable 0x3D76C0 (execute = 0x3368C0)
+0x003375D4 LiveActor_getBaseMtx  # HIPOTESIS: pos14, si ModelKeeper(+0x28) existe devuelve su matriz (tail-call 0x25C74C); orden SMO getBaseMtx
+0x003375ec LiveActor_getNerveKeeper  # vtable pos 0, comun a las 220 clases; setNerve/isNerve la llaman
+0x003375F4 LiveActor_getAudioKeeper  # HIPOTESIS: pos16, devuelve +0x38; se arranca en makeActorAlive/endClipped y se para en makeActorDead/startClipped; orden SMO (effect, audio)
+0x003375FC LiveActor_getEffectKeeper  # CONFIRMADO: pos15, devuelve +0x34, campo que escribe initEffectKeeper (seccion "Effect"); igual que la interfaz secundaria en +4
+0x00375E44 LiveActor_initStageSwitchKeeper  # CONFIRMADO: secundaria +0xC pos1, la llama initStageSwitchAppear cuando el keeper es null
+0x00375F20 LiveActor_getStageSwitchKeeper  # CONFIRMADO: vtable secundaria en this+0xC, devuelve actor+0x3C; initStageSwitchAppear la llama y si es null llama a la siguiente
+0x003765A0 LiveActor_IUseEffectKeeper_getEffectKeeper  # CONFIRMADO: vtable secundaria en this+4, devuelve [this+0x30]=actor+0x34
+0x00376A3C LiveActor_IUseAudioKeeper_getAudioKeeper  # HIPOTESIS: vtable secundaria en this+8, devuelve actor+0x38
+0x00395d34 create_AppearStep
+0x00395d6c create_BlindCloud
+0x00395da4 create_BlockBrick
+0x00395ddc create_BlockEmpty
+0x00395e14 create_DossunTail
+0x00395e4c create_FireFlower
+0x00395e84 create_Fugumannen
+0x00395ebc create_HammerBros
+0x00395ef4 create_KuriboTail
+0x00395f2c create_LavaGeyser
+0x00395f64 create_LiftGeyser
+0x00395f9c create_NeedleTrap
+0x00395fd4 create_PackunFire
+0x0039600c create_PataKuribo
+0x00396044 create_PatanBoard
+0x0039607c create_PhotoAlbum
+0x003960b4 create_PresentBox
+0x003960ec create_RestartObj
+0x00396124 create_SpikeStick
+0x0039615c create_SwingSpike
+0x00396194 create_TeresaRail
+0x003961cc create_TimerClock
+0x00396204 create_Trampoline
+0x0039623c create_UpperBlock
+0x00396274 create_WarpPorter
+0x003962ac create_WooGanSand
+0x003962e4 create_BombHeiTail
+0x0039631c create_Candlestand
+0x00396354 create_CoinCollect
+0x0039638c create_DemoStarter
+0x003963c4 create_FireBarCore
+0x003963fc create_FixMapParts
+0x00396434 create_GhostPlayer
+0x0039646c create_KinokoOneUp
+0x003964a4 create_KinokoSuper
+0x003964dc create_KoopaPillar
+0x00396514 create_KoopaSwitch
+0x0039654c create_KuriboTower
+0x00396584 create_MarinePlant
+0x003965bc create_NeedleBlock
+0x003965f4 create_NeedleFloor
+0x0039662c create_NeedlePlant
+0x00396664 create_StickNeedle
+0x0039669c create_TeresaGroup
+0x003966d4 create_BalanceTruck
+0x0039670c create_EnemyCounter
+0x00396744 create_FallMapParts
+0x0039677c create_GamaguchiKun
+0x003967b4 create_GeneratorBox
+0x003967ec create_GyroLauncher
+0x00396824 create_KillerMagnum
+0x0039685c create_KinokoPoison
+0x00396894 create_LavaConveyer
+0x003968cc create_NeedleRoller
+0x00396904 create_PackunFlower
+0x0039693c create_PatapataWing
+0x00396974 create_SoundEmitObj
+0x003969ac create_BlockQuestion
+0x003969e4 create_BlockRoulette
+0x00396a1c create_BoomerangBros
+0x00396a54 create_ClockMapParts
+0x00396a8c create_CoinGathering
+0x00396ab4 create_CoinGenerator
+0x00396aec create_JumpFlipBoard
+0x00396b24 create_KoopaDoorLast
+0x00396b5c create_NeedleBarCore
+0x00396b94 create_PeachForTitle
+0x00396bcc create_RailDotDrawer
+0x00396c04 create_SlideMapParts
+0x00396c3c create_StreetPassObj
+0x00396c74 create_SwingMapParts
+0x00396cac create_TrampleSwitch
+0x00396ce4 create_WarpAreaPoint
+0x00396d1c create_WaterFlowCube
+0x00396d54 create_WheelMapParts
+0x00396d8c create_BlockBrickItem
+0x00396dc4 create_BlockNoteSuper
+0x00396dfc create_BlockRailCurve
+0x00396e24 create_CoinRedStarter
+0x00396e5c create_GeneratorEnemy
+0x00396e94 create_LiftGeyserStep
+0x00396ecc create_PropellerBlock
+0x00396f04 create_RotateMapParts
+0x00396f3c create_SeesawMapParts
+0x00396f74 create_TrickHintPanel
+0x00396fac create_WobbleMapParts
+0x00396fe4 create_BeatBlockHolder
+0x0039701c create_BoomerangFlower
+0x00397054 create_CandlestandFire
+0x0039708c create_CourseSelectObj
+0x003970c4 create_EffectObjReEmit
+0x003970fc create_EffectObjSensor
+0x00397134 create_EffectObjStream
+0x0039716c create_EffectObjSwitch
+0x003971a4 create_FloaterMapParts
+0x003971dc create_FrameOutChecker
+0x00397214 create_GeneratorBoxHop
+0x0039724c create_GororiGenerator
+0x00397284 create_KeyMoveMapParts
+0x003972bc create_KickStoneStrong
+0x003972e4 create_KillerGenerator
+0x0039731c create_KinokoOneUpFast
+0x00397354 create_KinokoSuperFast
+0x0039738c create_TelescopeTarget
+0x003973c4 create_TentenGenerator
+0x003973fc create_TransparentWall
+0x00397434 create_BlockTransparent
+0x0039746c create_BombHeiGenerator
+0x003974a4 create_BunbunMysteryBox
+0x003974dc create_CollapseMapParts
+0x00397514 create_GoAndReturnParts
+0x0039754c create_KinokoPoisonFast
+0x00397584 create_KuriboTailSearch
+0x003975bc create_NoteObjGenerator
+0x003975f4 create_PukupukuLoopRail
+0x0039762c create_RailMoveMapParts
+0x00397664 create_SuperLeafSpecial
+0x0039769c create_BlockQuestionLong
+0x003976d4 create_BlockRailStraight
+0x003976fc create_BoneRollerCoaster
+0x00397734 create_ChorobonGenerator
+0x0039776c create_CoinRailGenerator
+0x003977a4 create_EntranceCameraObj
+0x003977dc create_KoopaCollapseStep
+0x00397814 create_PatanBoardStarter
+0x0039784c create_PukupukuGenerator
+0x00397884 create_SwingNeedleRoller
+0x003978bc create_AquariumSwimDebris
+0x003978f4 create_EffectObjLiftLiner
+0x0039792c create_KoopaFireGenerator
+0x00397964 create_BlockQuestionFlying
+0x0039799c create_BlockRailTerminater
+0x003979c4 create_CandlestandObserver
+0x003979fc create_FugumannenGenerator
+0x00397a34 create_KeyMoveAndFallParts
+0x00397a6c create_SwitchSlideMapParts
+0x00397aa4 create_AttackRevolvingPanel
+0x00397adc create_BlockDragonGenerator
+0x00397b14 create_BombHeiTailGenerator
+0x00397b4c create_GeneratorBoxHopChild
+0x00397b84 create_RollingShakeMapParts
+0x00397bbc create_SwitchRotateMapParts
+0x00397bf4 create_BunbunAndPunpunTagObj
+0x00397c2c create_CoinRailMoveGenerator
+0x00397c64 create_CollapseBreakMapParts
+0x00397c9c create_EffectObjFollowCamera
+0x00397cd4 create_GroundRiserAttachment
+0x00397d0c create_PunpunStageDamageFire
+0x00397d44 create_VisibleSwitchMapParts
+0x00397d7c create_RollingReflectMapParts
+0x00397db4 create_BridgePukupukuBreakBridge
+0x00397dec create_Bug
+0x00397e24 create_Poo
+0x00397e5c create_Sky
+0x00397e84 create_Bird
+0x00397ebc create_Coin
+0x00397ee4 create_Indy
+0x00397f1c create_Pole
+0x00397f54 create_Rope
+0x00397f8c create_Dokan
+0x00397fc4 create_Gesso
+0x00397ffc create_Grass
+0x00398034 create_Karon
+0x0039806c create_Koopa
+0x003980a4 create_Luigi
+0x003980dc create_Peach
+0x00398114 create_Plant
+0x0039814c create_TreeA
+0x00398184 create_Bubble
+0x003981bc create_Bunbun
+0x003981f4 create_Burner
+0x0039822c create_Dossun
+0x00398264 create_Gorori
+0x0039829c create_Hoppun
+0x003982d4 create_Kameck
+0x0039830c create_Killer
+0x00398344 create_Kuribo
+0x0039837c create_Picket
+0x003983b4 create_Punpun
+0x003983ec create_Teresa
+0x00398424 create_Togezo
+0x0039845c create_Utsubo
+0x00398494 create_Wanwan
+0x003984cc create_WooGan
+0x00398504 create_BombHei
+0x0039853c create_Choropu
+0x00398574 create_CoinBox
+0x003985ac create_Kabehei
+0x003985e4 create_Kinopio
+0x0039861c create_Meragon
+0x00398654 create_NoteObj
+0x0039867c create_NutLift
+0x003986b4 create_PeraObj
+0x003986ec create_Seagull
+0x00398724 create_Sokuten
+0x0039875c create_Trilift
+0x00398794 create_WoodBox
+0x003987cc create_Chorobon
+0x00398804 create_CoinRing
+0x0039883c create_Garigari
+0x00398874 create_Nokonoko
+0x003988ac create_PatanBox
+0x003988e4 create_Pukupuku
+0x0039891c create_WarpCube
+0x00398954 create_WarpDoor
+0x0039898c create_WarpLift
+0x003989c4 create_BeatBlock
+0x003989fc create_BlockHelp
+0x00398a34 create_BlockNote
+0x00398a6c create_EffectObj
+0x00398aa4 create_FallStone
+0x00398adc create_GrassMike
+0x00398b14 create_KickKoura
+0x00398b4c create_KickStone
+0x00398b74 create_KoopaDoor
+0x00398bac create_NeedleBar
+0x00398be4 create_PackunInk
+0x00398c1c create_SamboBody
+0x00398c54 create_SamboHead
+0x00398c8c create_SuperLeaf
+0x00398cc4 create_SuperStar
+0x00398cfc create_SwingLift
+0x00398d34 create_Telescope
+0x00398d6c create_TogeMetbo
+0x00398da4 create_ShadowObj
+0x00398dcc create_CameraArea
+0x00398df4 create_MessageArea
+0x00398e1c create_SoundEmitArea
+0x00398e44 create_SpotLightArea
+0x00398e6c create_ChangeCoverArea
+0x00398e94 create_SwitchKeepOnArea
+0x00398ebc create_ObjectChildArea
+0x00398eec create_PlayerRestrictedPlane
+0x00398f14 create_AudioVolumeSettingArea
+0x00398f3c create_AudioEffectChangeArea
+0x00398f64 create_Anim
+0x00398f8c create_Rail
+0x00398fb4 create_Tower
+0x00398fdc create_FixAll
+0x00399004 create_FixPos
+0x0039902c create_Follow
+0x00399054 create_Parallel
+0x0039907c create_RailTower
+0x003990a4 create_DemoTarget
+0x003990cc create_FixAllSpot
+0x003990f4 create_FixPosSpot
+0x0039911c create_Programable
+0x00399144 create_TowerTarget
+0x0039916c create_ParallelTarget
+0x00399194 create_ParallelVersus
+0x003991e4 create_DemoEndRollStage
+0x0039920c create_DemoOpeningStage
+0x00399234 create_DemoLastLetterStage
+0x0039925c create_DemoLuigiLetterStage
+0x00399284 create_DemoLuigiRescueStage
+0x003992ac create_DemoWorldInterval01Stage
+0x0039aeac create_StartEventBattleShip
+0x0039aee4 create_StartEventDokan
+0x0039af1c create_StartEventHurryUp
+0x0039af54 create_StartEventFirstStage
+0x0039af8c create_StartEventLuigiPrison
+0x003A8FA4 ExecuteOrderTable  # CONFIRMADO: entradas de 16 bytes {grupo, lista, tipo, max}, p.ej. {"敵","敵[Movement]","ActorMovement",32}
+0x003C76FC GameActor_vtable  # CONFIRMADO: GameActor__ctor la escribe; mismas 23 entradas que LiveActor
+0x003D797C LiveActor_vtable  # CONFIRMADO: LiveActor__ctor escribe DAT_0027ff2c=0x3D797C en this+0; secundarias en +0x68/+0x74/+0x88
+0x003F02B8 HitSensorTypeNameTable  # CONFIRMADO: 17 pares {nombre,tipo}: Eye0 Player1 Npc2 Ride3 Enemy4 EnemyBody5 EnemyAttack6 KillerMagnum7 Dossun8 EnemySimple9 MapObj10 MapObjSimple11 Bindable12 CollisionParts13 KickKoura14 PlayerFireBall15 WooGanSandBody16
+0x00251E20 PlayerActionNode_addEdge  # CONFIRMADO: (nodo, condicion, nodoDestino); emulacion de PlayerActionGraph_build, 721 llamadas
+0x00251FB8 PlayerActionCondOr__ctor  # CONFIRMADO: evaluar 0x001A7288 = OR de todos
+0x00251F6C PlayerActionCondOr_add  # CONFIRMADO: agrega condicion a una lista OR
+0x00252078 PlayerActionCondNot__ctor  # CONFIRMADO: evaluar 0x001A9520 = !cond
+0x00251F4C PlayerActionCondFrames__ctor  # CONFIRMADO: evaluar 0x001B89E0 cuenta frames seguidos con la condicion
+0x00251E98 PlayerActionCondAnimEnd__ctor  # HIPOTESIS: (Anim, nombre|0, -1) -> anim terminada; nombres "SquatEnd", "TailAttackSquat*"
+0x00251FE4 PlayerActionCondFormIs__ctor  # HIPOTESIS: *ctx[0x10] == valor; ctx[0x10] = forma (power-up)
+0x001B9F30 PlayerActionCondFormIs5__ctor  # HIPOTESIS: *ctx[0x10] == 5 -> condicion de Estatua
+0x00225458 isActorRising  # HIPOTESIS: dot(+0x18 arriba, +0x24 velocidad) > K
+0x002D2CC0 PlayerActionCondJumpOnGround__ctor  # CONFIRMADO(estructura): Ctrl.vf24 && !subiendo && Col.vf24
+0x002D3B8C PlayerActionCondStopped__ctor  # HIPOTESIS: |vel| <= K
+0x002D3F6C PlayerActionCondBrake__ctor  # HIPOTESIS: stick contrario a la velocidad (-> Frenar)
+0x002D2BD4 PlayerActionCondStickBack__ctor  # HIPOTESIS: dir del stick contra el frente (-> TurnPoint)
+0x002D3014 PlayerActionCondWallGrab__ctor  # HIPOTESIS: pared enfrente agarrable (-> WallKeep)
+0x001B9FD8 PlayerActionCondRequestBit__ctor  # HIPOTESIS: bit de ctx[0x8] (peticion externa)
+0x00326C54 PlayerInput_isJumpTriggerBuffered  # CONFIRMADO: +0x34 < 5 (frames desde que pulso A/B)
+0x00326C78 PlayerInput_isJumpHold  # HIPOTESIS(boton): +0x30 hold A/B
+0x00326C4C PlayerInput_isActionTrigger  # HIPOTESIS(boton): +0x39 trigger X/Y
+0x00326C70 PlayerInput_isActionHold  # HIPOTESIS(boton): +0x3A hold X/Y
+0x00326C9C PlayerInput_isSquatHold  # HIPOTESIS(boton): +0x3C hold L/R
+0x00326C88 PlayerInput_isActionTriggerBuffered  # CONFIRMADO: +0x48 < 5 (frames desde que pulso X/Y)
+0x00326CF4 PlayerInput_isStickOn  # CONFIRMADO: +0xC = |stick| > umbral (PlayerInput_update)
+0x00326C44 PlayerInput_getStickDir3D  # CONFIRMADO: devuelve +0x10 (vector relativo a camara)
+0x0024CA44 isPadTrigger  # HIPOTESIS: (puerto, mascara logica) reinicia los contadores de PlayerInput
+0x00250ED8 isPadHold  # HIPOTESIS: (puerto, mascara logica); mascaras 1|2=A/B, 8|0x10=X/Y, 0x2000|0x4000=L/R
+0x00151B9C PlayerCollider__ctor  # HIPOTESIS: ctx[0x5], 6 sub-chequeadores en +0x24..+0x38; vf24 = en el suelo (118 usos en el grafo)
+0x001A46C0 PlayerStateRun__ctor  # HIPOTESIS: entra con stick movido desde Esperar, sale a Esperar si vel~0
+0x00171D5C PlayerStateFall__ctor  # HIPOTESIS: se entra con "NO en suelo"; anims TurnAirL/R
+0x00173F04 PlayerStateLand__ctor  # HIPOTESIS: anims Land/LandTurn/SquatLand/WallHitLand/LandRolling
+0x001818F4 PlayerStateTurn__ctor  # HIPOTESIS: anim TurnPoint
+0x0017533C PlayerStateWallKeep__ctor  # HIPOTESIS: anims WallKeep/WallKeepReverse/WallSlideR/L
+0x0025211C PlayerStateSquatSlide__ctor  # HIPOTESIS: anims SquatSlide/TailAttackSquat*
+0x00196EAC PlayerStateSquatEnd__ctor  # CONFIRMADO: base con "SquatEnd"
+0x00181418 PlayerStateBrake__ctor  # HIPOTESIS: anim Brake
+0x0019D948 PlayerStateDie__ctor  # HIPOTESIS: anims DieOver/SwimDieOver
+0x00196830 PlayerStateJumpBroad__ctor  # HIPOTESIS: anim JumpBroad (salto largo)
+0x00197B88 PlayerStateJumpTurn__ctor  # HIPOTESIS: anim JumpTurn
+0x002520CC PlayerStateTailAttackGround__ctor  # HIPOTESIS: anim TailAttackSquatGround
+0x0025208C PlayerStateTailAttackAir__ctor  # HIPOTESIS: anims TrampleRollingAir/TailAttackSquatAir
+0x0018F0EC PlayerStateWallHit__ctor  # CONFIRMADO: base con "WallHit"
+0x001A7FCC PlayerStateBounce__ctor  # CONFIRMADO: rebote tras pisar; se entra con ctx8.bit1, que pone PlayerActor_attackSensor tras sendMsgPlayerTrample exitoso (antes mal nombrado PlayerStateHipDropStart)
+0x0019DD68 PlayerStateWallHitLand__ctor  # HIPOTESIS: anims WallHitLand/WallHitLandSquat
+0x00171CD4 PlayerStateSwimDive__ctor  # HIPOTESIS: anim SwimDive
+0x001A7254 PlayerStateSwimTrample__ctor  # HIPOTESIS: anim SwimTrample
+0x0019F59C PlayerStateSwimSquat__ctor  # HIPOTESIS: anim SwimSquat
+0x001B9040 PlayerStateFallSlowly__ctor  # HIPOTESIS: anim FallSlowly; exige forma tanuki + caer + mantener A/B
+0x001B79A4 PlayerStatePropellerFly__ctor  # HIPOTESIS: sonido SePmLvPropellerFlyDownSlow
+0x001A73AC PlayerStateLandStiffen__ctor  # HIPOTESIS: anim LandStiffen
+0x0018144C PlayerActionExecutor_selectNext  # CONFIRMADO: primera arista (orden de registro) cuya condicion da true -> destino en this+4
+0x0028E940 LinkList_pushBack  # CONFIRMADO: inserta al final de la lista doble (orden de recorrido = orden de insercion)
+0x001972E4 PlayerStateSwimHipDrop__ctor  # HIPOTESIS: en agua + pulso L/R + hay espacio abajo (misma condicion que el Senton aereo); sensor "SwimHipDropStart"
+0x001749C0 PlayerStateBrakeTurn__ctor  # HIPOTESIS: viene de Frenar con stick hacia adelante, vuelve a Correr al terminar la anim
+0x00197C5C PlayerStateWallFall__ctor  # HIPOTESIS: desde AgarrePared al soltar la pared (4 f sin contacto o stick hacia afuera); hereda de Fall
+0x001974B8 PlayerStateSwimJumpOut__ctor  # HIPOTESIS: desde NadarSuperficie cerca de la superficie + pulso A/B
+0x00225498 PlayerCollider_isTouchCode  # CONFIRMADO(estructura): recorre contactos y compara campo +0xc con N; N=2/3 -> Morir (cuadra con Floor_code 2 = lava)
+0x0028F9D4 nngx_Initialize  # CONFIRMADO: GSPGPU_Initialize + 7 callbacks de evento GSP + escribe UNA VEZ los registros LCD de framebuffer (0x400468/46C/568/56C, formato 0x400470, select 0x400478/578)
+0x00107B24 GSP_SetEventCallback  # CONFIRMADO: (callback, evento 0..6) -> ctxGSP[4+evento]; eventos 0 PSC0, 1 PSC1, 2 VBlank arriba, 3 VBlank abajo, 4 PPF, 5 P3D, 6 DMA
+0x00107B10 GSP_isFlag75  # CONFIRMADO: devuelve ctxGSP+0x75 (1 si RegisterInterruptRelayQueue devolvio 0x2A07)
+0x00107258 nngx_onVBlankTop  # CONFIRMADO: llama el callback VSync del juego (nngx+0x15C, arg 0x400) y cuenta frames en nngx+0x154
+0x0010729C nngx_onVBlankBottom  # CONFIRMADO: callback VSync nngx+0x160 (arg 0x401), contador nngx+0x158
+0x0026E994 sendMsgPlayerTrample  # CONFIRMADO: msg 1; Mario sensor Foot encima del enemigo; si se acepta ctx8|=1<<1 (-> RebotePisotón)
+0x001E5780 sendMsgPlayerHeadAttack  # CONFIRMADO: msg 3; sensor Head; si se acepta ctx8|=1<<2 y anula velocidad hacia arriba
+0x001E34C0 sendMsgPlayerTailAttack  # CONFIRMADO: msg 0x12; sensor TailAttack
+0x0026E95C sendMsgPlayerKick  # CONFIRMADO: msg 0x13; si se acepta arranca anim Kick
+0x0026EBE0 setFlagBit  # CONFIRMADO: *p |= 1<<bit
+0x0027DB90 isMsg17  # CONFIRMADO: msg == 0x11 (92 llamadas, el mas consultado; significado abierto, ver reportes\mensajes.md)
+0x0027DBA0 isMsgPlayerTailAttack  # CONFIRMADO: msg == 0x12
+0x00277D5C isMsgPlayerKick  # CONFIRMADO: msg == 0x13
+0x0027D564 sendMsgEnemyAttack_raw  # CONFIRMADO: envoltorio msg 0x2D (sendMsgEnemyAttack 0x279BC4 lo usa)
+0x001A9520 PlayerActionCondNot_evaluate  # CONFIRMADO: eval(this+4) ^ 1 (decomp/src/piloto.c)
+0x001B8B74 PlayerActionCondAnd_evaluate  # CONFIRMADO: AND de toda la lista intrusiva, sin cortocircuito (decomp/src/piloto.c)
+0x001A7288 PlayerActionCondOr_evaluate  # CONFIRMADO: OR de toda la lista, sin cortocircuito (decomp/src/piloto.c)
+0x002D2C6C PlayerActionCondJumpOnGround_evaluate  # CONFIRMADO: col.vf9 && !isActorRising(fis) && ctrl.vf9 (decomp/src/piloto.c)
+0x002D3B34 PlayerActionCondStopped_evaluate  # CONFIRMADO: |FUN_00273064(+0x6C,+0x24)| <= 0.1 comparando bits (decomp/src/piloto.c)
+0x003F21D8 NrvKuribo_Attack  # CONFIRMADO: nervio "[state]攻撃" (ataque), Kuribo_init
+0x003F21D4 NrvKuribo_PopOut  # CONFIRMADO: nervio "[state]飛び出し" (salir disparado), Kuribo_init
+0x003F21E4 NrvKuribo_PressDown  # HIPOTESIS: nervio que pone tryReceiveMsgPressDownAndSetNerve (aplastado)
+0x003F21E8 NrvKuribo_BlowDown  # HIPOTESIS: nervio que pone EnemyStateBlowDown_tryReceiveMsg (derribado/volando)
+0x002D3D58 PlayerActionCondBrake_evaluate  # CONFIRMADO: stick fuerte contra la velocidad -> contador de frames (decomp/src/tanda2.c)
