@@ -69,3 +69,4 @@ __pycache__/
 *.cia
 *.cxi
 terceros/
+!/LICENSE

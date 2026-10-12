@@ -32,6 +32,14 @@ Luego sigue `recomp/README.md` (traducción y compilación con `zig cc`) y `ESTA
 
 Requisitos: Windows 10/11 x64, Python 3 (`py`), `ziglang` (pip) como compilador, y `capstone`/`unicorn` para los verificadores.
 
+## Contribuir
+
+Cualquiera puede modificar, arreglar y mejorar el port: abre un *issue* o manda un *pull request*. Antes de empezar, lee `ESTADO.md` para ver qué se sabe y qué falta. Una sola regla: **nunca subas nada sacado del juego** (ROM, texturas, modelos, sonidos, textos ni el C generado).
+
+## Licencia
+
+El código de este repositorio es **MIT** (ver `LICENSE`). La licencia no cubre el juego ni su contenido.
+
 ## Aviso legal
 
 Proyecto de investigación y preservación hecho por fans, sin relación con Nintendo. *Super Mario 3D Land* y todo su contenido son propiedad de Nintendo. Para usarlo debes tener una copia legítima del juego.
